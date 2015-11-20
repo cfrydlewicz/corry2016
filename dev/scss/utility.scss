@@ -1,0 +1,39 @@
+/* UTILITY CLASSES */
+
+.u-clear {
+	clear: both;
+}
+.u-bold {
+	font-weight: bold;
+}
+.u-allcaps,
+.u-uppercase {
+	text-transform: uppercase;
+}
+.u-capitalize {
+	text-transform: capitalize;
+}
+.u-lowercase {
+	text-transform: lowercase;
+}
+.u-hidden {
+	display: none;
+}
+
+/* accessibility text */
+.u-visually-hidden {
+  font-size: 0px;
+  line-height: 0px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.u-clearfix:after {
+	clear: both;
+	content: '';
+	visibility: hidden;
+	display: block;
+	height: 0px;
+}
