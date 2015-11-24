@@ -15,39 +15,13 @@ module.exports = function(grunt) {
       }
     },
 
-		concat: {
-			css: {
-  			src: [
-          'scss/reset.scss',
-          'scss/vars.scss',
-          'scss/fonts.scss',
-          'scss/utility.scss',
-          'scss/nontext.scss',
-          'scss/theme.scss',
-          'scss/wp-plugins.scss',
-          'scss/about.scss',
-          'scss/wireframe.scss',
-					'scss/print.scss'
-				],
-				dest: 'scss/corry2016.concat.scss'
-			},
-			js : {
-				src : [
-					'js/jquery-2.1.1.min.js',
-					'js/modernizr.custom.js',
-          'js/custom.js'
-				],
-				dest : 'js/corry2016.concat.js'
-			}
-		},
-
     sass: {
       dist: {
         options: {
           style: 'expanded',
         },
         files: {
-          'css/corry2016.concat.css' : 'scss/corry2016.concat.scss'
+          'css/corry2016.concat.css' : 'scss/corry2016.manifest.scss'
         }
       }
     },
@@ -64,7 +38,26 @@ module.exports = function(grunt) {
     cssmin: {
       minify: {
         src: 'css/corry2016.concat.css',
+        dest: 'css/corry2016.min.css'
+      }
+    },
+
+    concat: {
+      css: {
+        // append WordPress Theme info
+        src: [
+          'corry2016.wpinfo.css',
+          'css/corry2016.min.css'
+        ],
         dest: '../style.css'
+      },
+      js : {
+        src : [
+          'js/jquery-2.1.1.min.js',
+          'js/modernizr.custom.js',
+          'js/custom.js'
+        ],
+        dest : 'js/corry2016.concat.js'
       }
     },
 
