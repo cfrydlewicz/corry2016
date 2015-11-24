@@ -22,7 +22,7 @@ em {
   font-style: italic;
 }
 del {
-  color: $c-greytext;
+  color: $c-grey;
 }
 
 /* links */
@@ -33,6 +33,9 @@ a {
 a:active,
 a:visited {
 	color: $c-link2;
+}
+a:visited {
+	@extend .icon-checkmark;
 }
 a:hover {
 	text-decoration: underline;
@@ -163,3 +166,98 @@ li {
 	font-size: 1.4rem;
 }
 
+/* icomoon CSS */
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?byte2f');
+	src:url('fonts/icomoon.eot?byte2f#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?byte2f') format('truetype'),
+		url('fonts/icomoon.woff?byte2f') format('woff'),
+		url('fonts/icomoon.svg?byte2f#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home3:before {
+	content: "\e900";
+}
+.icon-profile:before {
+	content: "\e901";
+}
+.icon-bubbles:before {
+	content: "\e902";
+}
+.icon-search:before {
+	content: "\e916";
+}
+.icon-heart:before {
+	content: "\e903";
+}
+.icon-plus:before {
+	content: "\e904";
+}
+.icon-minus:before {
+	content: "\e905";
+}
+.icon-cross:before {
+	content: "\e906";
+}
+.icon-checkmark:before {
+	content: "\e907";
+}
+.icon-arrow-up2:before {
+	content: "\e908";
+}
+.icon-arrow-right2:before {
+	content: "\e909";
+}
+.icon-arrow-down2:before {
+	content: "\e90a";
+}
+.icon-arrow-left2:before {
+	content: "\e90b";
+}
+.icon-mail2:before {
+	content: "\e90c";
+}
+.icon-google-plus:before {
+	content: "\e90d";
+}
+.icon-facebook2:before {
+	content: "\e90e";
+}
+.icon-twitter:before {
+	content: "\e90f";
+}
+.icon-steam:before {
+	content: "\e910";
+}
+.icon-github:before {
+	content: "\e911";
+}
+.icon-wordpress:before {
+	content: "\e912";
+}
+.icon-skype:before {
+	content: "\e913";
+}
+.icon-reddit:before {
+	content: "\e914";
+}
+.icon-linkedin2:before {
+	content: "\e915";
+}

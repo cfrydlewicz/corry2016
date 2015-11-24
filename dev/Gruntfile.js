@@ -22,6 +22,7 @@ module.exports = function(grunt) {
           'scss/vars.scss',
           'scss/fonts.scss',
           'scss/utility.scss',
+          'scss/nontext.scss',
           'scss/theme.scss',
           'scss/wp-plugins.scss',
           'scss/about.scss',

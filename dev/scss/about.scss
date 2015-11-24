@@ -76,7 +76,7 @@
 	margin-top: 3rem;
 	.meter {
 		box-sizing: border-box;
-		background-color: $grey;
+		background-color: $c-grey;
 		height: 2rem;
 		padding: .2rem .5rem;
 		h3 {
@@ -85,9 +85,9 @@
 		}
 	}
 	.skill {
-		color: $white;
-		background-color: $dark2;
-		background: repeating-linear-gradient( 45deg, $dark2, $dark1 10px, $dark2 10px, $dark1 20px );
+		color: #fff;
+		background-color: mix(black, $c-basetext, 29%);
+		background: repeating-linear-gradient( 45deg, mix(black, $c-basetext, 29%), mix(black, $c-basetext, 20%) 10px, mix(black, $c-basetext, 29%) 10px, mix(black, $c-basetext, 20%) 20px );
 		margin-bottom: .5rem;
 		&.level100 {
 /*    &:after {content: "100%";}  */

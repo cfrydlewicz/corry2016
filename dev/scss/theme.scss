@@ -1,10 +1,46 @@
 /* Theme */
 
+html,
+body,
+.fullHeight {
+  height: 100%;
+  margin: 0;
+}
+
 .total-wrapper {
 	width: 100%;
 	max-width: 100%;
 }
 
+/* scanline effect */
+/* inspired by http://codepen.io/0x04/pen/qlayi */
+$scanLineWidth: 2px;
+$scanLineOpacity: 0.25;
+
+.total-wrapper,
+.total-wrapper:before {
+	background: url("images/calm-cloudy-beach.jpg") no-repeat center;
+}
+.total-wrapper:before {
+  background: -webkit-repeating-linear-gradient(
+    top,
+    transparent 0px,
+    transparent $scanLineWidth,
+    rgba(0,0,0,$scanLineOpacity) $scanLineWidth,
+    rgba(0,0,0,$scanLineOpacity) $scanLineWidth*2
+  );
+  -webkit-background-size: 100% $scanLineWidth*2;
+  background: -moz-repeating-linear-gradient(
+    top,
+    transparent 0px,
+    transparent $scanLineWidth,
+    rgba(0,0,0,$scanLineOpacity) $scanLineWidth,
+    rgba(0,0,0,$scanLineOpacity) $scanLineWidth*2
+  );
+  -moz-background-size: 100% $scanLineWidth*2;
+}
+
+/* Outdated Browser Disruptor */
 .disruptor {
 	background-color: mix(white, $c-accent, 80%);
 	border-bottom: 2px solid $c-accent;
@@ -72,7 +108,7 @@
 	font-family: 'Oxygen', 'Arimo', sans-serif;
 	font-size: 2.7rem;
 	line-height: 1;
-	color: $c-greytext;
+	color: $c-grey;
 	font-weight: normal;
 	margin-top: 10px;
 	margin-left: 16px;
@@ -87,15 +123,11 @@
 	clear: right;
 	width: 40px;
 	height: 40px;
-	background-image: url('images/search-grey.png');
-	background-color: $light1;
-	background-repeat: no-repeat;
-	background-position: center right;
-	border-radius: $radius;
+	@extend .icon-search;
+	color: $c-grey;
 	cursor: pointer;
 	&:hover {
-		background-image: url('images/search-white.png');
-		background-color: $hovercolor;
+		color: $c-link2;
 	}
 	label {
 		float: left;
@@ -170,7 +202,7 @@
 	}
 	&.wp-caption {
 		padding: ( $margin * .5 );
-		border: 1px solid $c-greytext;
+		border: 1px solid $c-grey;
 		margin-bottom: ( $margin * 2 );
 		p,
 		figcaption {

@@ -34,8 +34,10 @@
 			<section class="contact-container footer-section-container wire-outline" id="anchor-contact">
 				<?php if ( in_category('professional') ) : ?>
 					<div class="contact-work">
-						<h3>I am currently <span class="availability availability--none">unavailable</span>.</h3>
-						<p>I am not actively seeking full-time or freelance work at this time.</p>
+						<h3>About Corry</h3>
+						<p>Like Madonna, I only use my first name on my site. Not only because of my massive ego, but also because Frydlewicz is a logo challenge I find myself unprepared for.</p>
+						<p>I am currently <span class="availability availability--none c-grey">unavailable</span> for full-time or freelance work.</p>
+						<p><a href="/about/">Read more about Corry</a></p>
 					</div>
 				<?php else : ?>
 					<div class="contact-personal">

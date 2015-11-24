@@ -2,7 +2,7 @@
 
 <?php the_post(); ?>
 
-<article class="u-container wire-outline">
+<article class="u-container wire-outline" id="anchor-single-article">
 	<div class="u-inner shadowed wire-outline">
 
 		<section class="article-thumbnail wire-outline" style="background-image: url('<?php get_post_thumbnail_url(); ?>');">
