@@ -1,0 +1,34 @@
+/* Wireframe Mode */
+
+$c-wire-cta:	#900;
+
+body.wireframe-mode-on {
+
+	.wire-outline {
+		outline: 1px dashed #eee;
+		background-image: none;
+		background-color: rgba(255, 255, 255, 0.9);
+		.wire-outline {
+			outline-color: #bbb;
+			.wire-outline {
+				outline: 1px dashed #999;
+				.wire-outline {
+					outline-color: #666;
+					.wire-outline {
+						outline-color: #333;
+					}
+				}
+			}
+		}
+	}
+
+	a {
+		color: $c-wire-cta;
+	}
+
+	button {
+		background-color: $c-wire-cta;
+		color: #fff;
+	}
+
+}

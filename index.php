@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="container<?php if ( !is_single() ) { echo " listing"; } ?>">
+<section class="container<?php if ( !is_single() ) { echo " listing"; } ?>" id="skip-to-content">
 
   <?php if ( have_posts() ) : ?>
 

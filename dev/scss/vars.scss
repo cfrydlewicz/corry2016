@@ -1,0 +1,36 @@
+/* SCSS Variables */
+
+/* breakpoints */
+$bp-sm: 320px;
+$bp-md: 768px;
+$bp-lg: 920px;
+$bp-xl: 1260px;
+
+/* colors */
+$c-primary:		#636;		/* DEFINE ME */
+$c-secondary:	#636;		/* DEFINE ME */
+$c-accent:		#636;		/* DEFINE ME */
+
+$c-basetext:	#111;		/* DEFINE ME */
+$c-greytext:	mix(white, $c-basetext, 50%);
+
+$c-link:			#f00;		/* DEFINE ME */
+$c-link2:			#0f0;		/* DEFINE ME */
+
+/* spacing */
+$margin: 16px;
+/* $radius: 8px;	*/
+
+/* Media Query Shortcuts */
+/*	$landscape	: "only screen and (orientation: landscape)" !default;	*/
+/*	$portrait		: "only screen and (orientation: portrait)" !default;	*/
+$only-sm			: "only screen and (max-width: #{$bp-md - 1})" !default;
+$not-sm				: "only screen and (min-width: #{$bp-md})" !default;
+$only-md			: "only screen and (min-width: #{$bp-md}) and (max-width: #{$bp-lg - 1})" !default;
+$not-md				: "only screen and (min-width: #{$bp-lg})" !default;
+$only-lg			: "only screen and (min-width: #{$bp-lg}) and (max-width: #{$bp-xl - 1})" !default;
+$not-lg				: "only screen and (min-width: #{$bp-xl})" !default;
+$only-xl			: "only screen and (min-width: #{$bp-desktop-m})" !default;
+$not-xl				: "only screen and (max-width: #{$bp-xl - 1})" !default;
+
+

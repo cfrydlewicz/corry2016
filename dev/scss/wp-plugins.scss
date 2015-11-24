@@ -1,0 +1,23 @@
+/* WordPress Plug-Ins */
+
+/* Simple Lightbox */
+#slb_viewer_wrap .slb_theme_slb_default,
+#slb_viewer_wrap .slb_theme_slb_baseline {
+	.slb_details {
+		padding-top: 1rem;
+	}
+	.slb_group_status {
+		display: block;
+		font-size: 1rem;
+		line-height: 1;
+		color: $c-greytext;
+		font-style: normal;
+		text-align: center;
+		margin: .5rem 0px 0px 0px;
+	}
+	.slb_slideshow { display: none; }
+	.slb_data_title { display: none; }
+	.slb_data_desc { display: none; }
+}
+
+

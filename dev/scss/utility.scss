@@ -1,7 +1,31 @@
 /* UTILITY CLASSES */
 
+.u-container {
+  float: left;
+  clear: both;
+  width: 100%;
+  .u-inner {
+    width: 90%;
+    margin: 0px auto;
+    &:after {
+      clear: both;
+      content: '';
+      visibility: hidden;
+      display: block;
+      height: 0px;
+    }
+  }
+}
+
 .u-clear {
 	clear: both;
+}
+.u-clearfix:after {
+	clear: both;
+	content: '';
+	visibility: hidden;
+	display: block;
+	height: 0px;
 }
 .u-bold {
 	font-weight: bold;
@@ -19,6 +43,9 @@
 .u-hidden {
 	display: none;
 }
+.u-nobreak {
+	white-space: nowrap;
+}
 
 /* accessibility text */
 .u-visually-hidden {
@@ -30,10 +57,54 @@
   visibility: hidden;
 }
 
-.u-clearfix:after {
-	clear: both;
-	content: '';
-	visibility: hidden;
-	display: block;
-	height: 0px;
+/* Style for clickable non-<a> elements */
+.u-clickable {
+	cursor: pointer;
 }
+
+/* Responsive Shortcut Classes */
+@media #{$only-sm} {
+	.u-not-sm {
+		display: none;
+	}
+}
+@media #{$not-sm} {
+	.u-only-sm {
+		display: none;
+	}
+}
+@media #{$only-md} {
+	.u-not-md {
+		display: none;
+	}
+}
+@media #{$not-md} {
+	.u-only-md {
+		display: none;
+	}
+}
+@media #{$only-lg} {
+	.u-not-lg {
+		display: none;
+	}
+}
+@media #{$not-lg} {
+	.u-only-lg {
+		display: none;
+	}
+}
+@media #{$only-xl} {
+	.u-not-xl {
+		display: none;
+	}
+}
+@media #{$not-xl} {
+	.u-only-xl {
+		display: none;
+	}
+}
+
+
+
+
+

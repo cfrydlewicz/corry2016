@@ -1,0 +1,165 @@
+/* Font Settings */
+
+$f-base-size:	16px;
+
+/* defaults */
+body {
+	font-family: 'Arimo', sans-serif;
+	font-size: $f-base-size;
+	line-height: 1.5;
+	color: $c-basetext;
+}
+
+/* emphasis */
+strong,
+em {
+	color: #000;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+del {
+  color: $c-greytext;
+}
+
+/* links */
+a {
+	color: $c-link;
+	text-decoration: none;
+}
+a:active,
+a:visited {
+	color: $c-link2;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+/* copy */
+h1 {
+	font-size: 2.1rem;
+	line-height: 1;
+	font-weight: normal;
+	.copy-area & {
+		margin-bottom: $margin;
+	}
+}
+
+h2 {
+  font-size: 1.7rem;
+  line-height: 1;
+  font-weight: normal;
+	.copy-area & {
+		margin-bottom: $margin * .5;
+	}
+}
+
+h3 {
+	font-size: 1.1rem;
+	line-height: 1.4;
+	font-weight: bold;
+	.copy-area & {
+		margin-bottom: $margin * .5;
+	}
+}
+
+h4 {
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: bold;
+  text-transform: uppercase;
+	.copy-area & {
+		margin-bottom: $margin * .5;
+	}
+}
+
+p, li {
+  font-size: 1rem;
+}
+p {
+  line-height: 1.8;
+	.copy-area & {
+		margin-bottom: $margin;
+	}
+}
+li {
+  line-height: 1.2;
+	margin-bottom: $margin * .5;
+  &:last-child {
+  	margin-bottom: 0;
+  }
+}
+.copy-area ul,
+.copy-area ol {
+	margin-bottom: $margin;
+	ul, ol {
+		padding-left: $margin * .5;
+		margin: $margin 0 ( $margin * .5 );
+		border-width: 1px 0;
+		border-style: solid;
+		border-color: mix(white, $c-primary, 80%);
+		ul, ol {
+			border-color: mix(white, $c-secondary, 80%);
+			ul, ol {
+				border-color: mix(white, $c-accent, 80%);
+			}
+		}
+	}
+}
+.copy-area ul {
+	list-style-type: disc;
+	ul {
+		list-style-type: square;
+		ul {
+			list-style-type: circle;
+		}
+	}
+}
+.copy-area ol {
+	list-style-type: decimal-leading-zero;
+	ol {
+		list-style-type: upper-alpha;
+		ol {
+			list-style-type: lower-roman;
+			ol {
+				list-style-type: lower-alpha;
+			}
+		}
+	}
+}
+
+.copy-area table {
+	font-size: .9rem;
+	line-height: 1.2rem;
+	p, li {
+		font-size: .9rem;
+	}
+	th {
+	  font-weight: bold;
+	  text-transform: uppercase;
+	}
+}
+
+/* text modifiers */
+.f-small {
+	font-size: .9rem;
+}
+.f-smaller {
+	font-size: .75rem;
+}
+.f-smallest {
+	font-size: .6rem;
+}
+.f-large {
+	font-size: 1.1rem;
+}
+.f-larger {
+	font-size: 1.25rem;
+}
+.f-largest {
+	font-size: 1.4rem;
+}
+
