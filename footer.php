@@ -76,5 +76,6 @@
 	</footer>
 
 	<?php wp_footer(); ?>
-</div><!--.total-wrapper-->
+</div><!-- /.scan-lines -->
+</div><!-- /.total-wrapper -->
 </body></html>

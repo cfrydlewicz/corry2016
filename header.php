@@ -24,7 +24,7 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 <!-- END Facebook SDK -->
 
-<div class="total-wrapper">
+<div class="total-wrapper"><div class="scan-lines">
 
 	<!--[if lte IE 9]>
 		<section class="disruptor u-container">
@@ -46,40 +46,48 @@
 			<div class="u-visually-hidden">
 				<p><a href="#skip-to-content">Skip to the page content &gt;</a></p>
 			</div>
-			<div class="search-container closed wire-outline"><?php get_search_form(); ?></div>
+			<div class="search-container icon-search closed wire-outline"><?php get_search_form(); ?></div>
 		</div>
 	</header>
 
 	<section class="navigation-container u-container wire-outline">
 		<div class="u-inner shadowed wire-outline">
 
-			<?php if ( !is_front_page() ) : ?>
-				<div class="nav-button nav-button--home">
-					<a class="toplevel-link wire-outline" href="/"><span class="u-visually-hidden">Home</span></a>
-				</div>
-			<?php endif; ?>
+			<nav class="navigation-parent u-flex-parent u-flex-parent--row-nowrap u-flex-parent--space-between">
 
-			<div class="nav-button nav-button--pro">
-				<a class="toplevel-link wire-outline" href="/pro">Professional</a>
-				<div class="nav-button-expand-toggle u-clickable wire-outline"><span class="u-visually-hidden">Show Professional Subcategories</span></div>
-				<div class="nav-button-subcategories wire-outline">
-					<?php wp_nav_menu( array('menu' => 'Professional' )); ?>
-				</div>
-			</div>
+				<?php if ( !is_front_page() ) : ?>
+					<div class="nav-button nav-button--home">
+						<a class="icon-home3 toplevel-link wire-outline" href="/" title="Home Page"><span class="u-visually-hidden">Home</span></a>
+					</div>
+				<?php endif; ?>
 
-			<div class="nav-button nav-button--unpro">
-				<a class="toplevel-link wire-outline" href="/pro">Personal</a>
-				<div class="nav-button-expand-toggle u-clickable wire-outline"><span class="u-visually-hidden">Show Personal Subcategories</span></div>
-				<div class="nav-button-subcategories wire-outline">
-					<?php wp_nav_menu( array('menu' => 'Personal' )); ?>
+				<div class="nav-button nav-button--expandable nav-button--pro u-flex--grow1">
+					<a class="toplevel-link wire-outline" href="/category/pro/">Professional</a>
+					<div class="nav-button-expand-toggle u-clickable wire-outline">
+						<span class="u-visually-hidden">Professional Subcategories:</span>
+					</div>
+					<div class="nav-button-subcategories wire-outline">
+						<?php wp_nav_menu( array('menu' => 'Professional' )); ?>
+					</div>
 				</div>
-			</div>
 
-			<?php if ( !is_page( 640 )  ) : // if not on the about page ?>
-				<div class="nav-button nav-button--about wire-outline">
-					<a class="toplevel-link wire-outline" href="/about/"><span class="u-visually-hidden">About Me</span></a>
+				<div class="nav-button nav-button--expandable nav-button--unpro u-flex--grow1">
+					<a class="toplevel-link wire-outline" href="/category/personal/">Personal</a>
+					<div class="nav-button-expand-toggle u-clickable wire-outline">
+						<span class="u-visually-hidden">Personal Subcategories:</span>
+					</div>
+					<div class="nav-button-subcategories wire-outline">
+						<?php wp_nav_menu( array('menu' => 'Personal' )); ?>
+					</div>
 				</div>
-			<?php endif; ?>
+
+				<?php if ( !is_page( 640 )  ) : // if not on the about page ?>
+					<div class="nav-button nav-button--about wire-outline">
+						<a class="icon-profile toplevel-link wire-outline" href="/about/" title="About Me"><span class="u-visually-hidden">About Me</span></a>
+					</div>
+				<?php endif; ?>
+
+			</nav>
 
 		</div>
 	</section><!-- /.navigation-container -->

@@ -48,7 +48,9 @@
 }
 
 /* accessibility text */
-.u-visually-hidden {
+.u-visually-hidden,
+.screen-reader-text	// legacy
+{
   font-size: 0px;
   line-height: 0px;
   text-indent: 100%;
@@ -60,6 +62,54 @@
 /* Style for clickable non-<a> elements */
 .u-clickable {
 	cursor: pointer;
+}
+
+/* flex box utility classes */
+.u-flex-parent {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	> .u-flex--grow1 {
+		flex-grow: 1;
+	}
+	> .u-flex--grow2 {
+		flex-grow: 2;
+	}
+	> .u-flex--grow3 {
+		flex-grow: 3;
+	}
+	> .u-flex--grow4 {
+		flex-grow: 4;
+	}
+	> .u-flex--grow5 {
+		flex-grow: 5;
+	}
+}
+.u-flex-parent--row-nowrap {
+	-webkit-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+}
+.u-flex-parent--col-nowrap {
+	-webkit-flex-flow: column nowrap;
+	flex-flow: column nowrap;
+}
+.u-flex-parent--row-wrap {
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+.u-flex-parent--col-wrap {
+	-webkit-flex-flow: column wrap;
+	flex-flow: column wrap;
+}
+.u-flex-parent--space-around {
+	-webkit-justify-content: space-around;
+	justify-content: space-around;
+}
+.u-flex-parent--space-between {
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
 }
 
 /* Responsive Shortcut Classes */
@@ -104,7 +154,9 @@
 	}
 }
 
-
-
+/* color classes */
+.c-grey {
+	color: $c-grey;	
+}
 
 

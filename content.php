@@ -1,6 +1,24 @@
-<section class="post post-<?php the_ID(); ?>">
-  <div class="thumbnail-container" style="background-image: url('<?php get_post_thumbnail_url() ?>');"></div>
+<article class="post post-<?php the_ID(); ?>">
+
+  <div class="thumbnail-container">
+    <img src="<?php get_post_thumbnail_url(); ?>" alt="(Post Thumbnail Image)" />
+  </div>
+
   <div class="text-container">
+
+    <div class="categories-container">
+      <p><span class="u-visually-hidden">Categories: </span><?php
+        $taxonomy = 'category';
+        $post_terms = wp_get_object_terms( $post->ID, $taxonomy, array( 'fields' => 'ids' ) );
+        $separator = ', ';
+        if ( !empty( $post_terms ) && !is_wp_error( $post_terms ) ) {
+          $term_ids = implode( ',' , $post_terms );
+          $terms = wp_list_categories( 'title_li=&style=none&echo=0&taxonomy=' . $taxonomy . '&include=' . $term_ids );
+          $terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
+          echo $terms;
+        } ?></p>
+    </div>
+
     <?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" class="special" rel="bookmark" data-hover="' . get_the_title() . '">', '</a></h2>' ); ?>
 
     <div class="entry-meta-container">
@@ -20,16 +38,6 @@
 
     <div class="entry-meta-container">
       <div class="entry-meta categories">
-        <p>Filed Under: <span class="cat-links"><?php
-          $taxonomy = 'category';
-          $post_terms = wp_get_object_terms( $post->ID, $taxonomy, array( 'fields' => 'ids' ) );
-          $separator = ', ';
-          if ( !empty( $post_terms ) && !is_wp_error( $post_terms ) ) {
-            $term_ids = implode( ',' , $post_terms );
-            $terms = wp_list_categories( 'title_li=&style=none&echo=0&taxonomy=' . $taxonomy . '&include=' . $term_ids );
-            $terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
-            echo $terms;
-            } ?></span></p>
         <p>Tags: <span class="tag-links"><?php the_tags( '', ', ', '' ); ?></span></p>
       </div>
 
@@ -40,4 +48,4 @@
 
   </div><!--.text-container-->
 
-</section><!--.post-#-->
+</article><!--.post-#-->

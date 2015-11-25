@@ -17,11 +17,13 @@ body,
 $scanLineWidth: 2px;
 $scanLineOpacity: 0.25;
 
-.total-wrapper,
-.total-wrapper:before {
-	background: url("images/calm-cloudy-beach.jpg") no-repeat center;
+.total-wrapper {
+	background-image: url("images/calm-cloudy-beach.jpg");
+	background-position-x: 50%;
+	background-attachment: fixed;
+	background-repeat: repeat-y;
 }
-.total-wrapper:before {
+.total-wrapper > .scan-lines {
   background: -webkit-repeating-linear-gradient(
     top,
     transparent 0px,
@@ -48,8 +50,7 @@ $scanLineOpacity: 0.25;
 }
 
 /* left/right shadows */
-/* https://css-tricks.com/almanac/properties/b/box-shadow/ */
-.u-container > .u-inner.shadowed {
+.shadowed {
 	position: relative;
 	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -62,16 +63,8 @@ $scanLineOpacity: 0.25;
 		-webkit-box-shadow: 0 0 20px rgba(0,0,0,0.8);
 		-moz-box-shadow: 0 0 20px rgba(0,0,0,0.8);
 		box-shadow: 0 0 20px rgba(0,0,0,0.8);
-		top: 10px;
-		bottom: 10px;
-		left: 0;
-		right: 0;
-		-moz-border-radius: 100px / 10px;
-		border-radius: 100px / 10px;
 	}
 	&:after {
-		right: 10px;
-		left: auto;
 		-webkit-transform: skew(8deg) rotate(3deg);
 		-moz-transform: skew(8deg) rotate(3deg);
 		-ms-transform: skew(8deg) rotate(3deg);
@@ -123,7 +116,6 @@ $scanLineOpacity: 0.25;
 	clear: right;
 	width: 40px;
 	height: 40px;
-	@extend .icon-search;
 	color: $c-grey;
 	cursor: pointer;
 	&:hover {
@@ -133,7 +125,6 @@ $scanLineOpacity: 0.25;
 		float: left;
 		clear: left;
 	}
-	label span {display: none;}
 	input {
 		box-sizing: border-box;
 		width: 0px;
@@ -169,6 +160,25 @@ $scanLineOpacity: 0.25;
 		}
 	}
 } /* .search-container */
+
+/* Navigation */
+.nav-button {
+	min-height: $min-interact;
+	min-width: $min-interact;
+	.toplevel-link {
+	}
+	.nav-button-expand-toggle {
+		@extend .icon-plus;
+		&.expanded {
+			@extend .icon-minus;
+		}
+	}
+	.nav-button-subcategories:not(.expanded) {
+		display: none;
+	}
+}
+
+
 
 .time-nav {
 	float: left;

@@ -11,7 +11,7 @@
 				<h4><span class="u-visually-hidden">Categories: </span><?php
 					$taxonomy = 'category';
 					$post_terms = wp_get_object_terms( $post->ID, $taxonomy, array( 'fields' => 'ids' ) );
-					$separator = ', ';
+					$separator = ' ';
 					if ( !empty( $post_terms ) && !is_wp_error( $post_terms ) ) {
 						$term_ids = implode( ',' , $post_terms );
 						$terms = wp_list_categories( 'title_li=&style=none&echo=0&taxonomy=' . $taxonomy . '&include=' . $term_ids );
@@ -25,7 +25,7 @@
 			</div>
 
 			<div class="article-date wire-outline">
-				<p class="f-small"><?php echo word_count(); ?> words, posted on <?php post_date(); ?></p>
+				<p class="f-small"><?php echo word_count(); ?> words &bull; <?php post_date(); ?></p>
 			</div>
 
 		</section>

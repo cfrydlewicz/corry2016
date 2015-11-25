@@ -80,21 +80,11 @@ textarea {
 
 /*
 * CSS TOGGLE SWITCH
-*
 * Ionuț Colceriu - ghinda.net
 * https://github.com/ghinda/css-toggle-switch
-*
 */
-/* supported values are px, rem-calc, em-calc
- */
-/* imports
- */
-/* Functions
- */
-/* Shared
- */
-/* Hide by default
- */
+
+/* Hide by default */
 .switch-toggle a, .switch-light span span {
   display: none; }
 
@@ -124,7 +114,7 @@ textarea {
       vertical-align: middle; }
     .switch-light input:focus ~ span a, .switch-light input:focus + label {
       outline: 1px dotted #888; }
-  /* don't hide the input from screen-readers and keyboard access
+  /* don't hide the input from screen readers and keyboard access
  */
   .switch-light input {
     position: absolute;

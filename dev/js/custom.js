@@ -27,7 +27,8 @@ $(document).ready( function() {
 
 	// Nav expanders
 	$('.nav-button-expand-toggle').click(function(){
-		$(this).siblings('.nav-button-subcategories').slideToggle();
+		$(this).parent().toggleClass('expanded');
+		$(this).siblings('.nav-button-subcategories').slideToggle('fast');
 	});
 
 	// smooth scrolling for anchor links
