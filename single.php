@@ -5,7 +5,7 @@
 <article class="u-container wire-outline" id="anchor-single-article">
 	<div class="u-inner shadowed wire-outline">
 
-		<section class="article-thumbnail wire-outline" style="background-image: url('<?php get_post_thumbnail_url(); ?>');">
+		<section class="article-thumbnail wire-outline" style="background-image: url('<?php get_post_thumbnail_url(); ?>');" id="skip-to-content">
 
 			<div class="article-categories wire-outline">
 				<h4><span class="u-visually-hidden">Categories: </span><?php
@@ -25,7 +25,7 @@
 			</div>
 
 			<div class="article-date wire-outline">
-				<p class="f-small"><?php echo word_count(); ?> words &bull; <?php post_date(); ?></p>
+				<p class="f-small"><?php echo word_count(); ?> words &bull; <?php the_date( 'Y.m.d', '', '' ); ?></p>
 			</div>
 
 		</section>

@@ -1,7 +1,7 @@
 	<footer class="fat-footer u-container wire-outline">
-		<div class="u-inner shadowed wire-outline">
+		<div class="u-inner shadowed u-flex-parent u-flex-parent--row-wrap u-flex-parent--space-between wire-outline">
 
-			<section class="wireframe-toggle-container footer-section-container wire-outline" id="anchor-wireframe-toggle">
+			<section class="wireframe-toggle-container footer-section-container u-flex--grow1 wire-outline" id="anchor-wireframe-toggle">
 				<h3>Want to see this site in wireframe mode?</h3>
 				<label class="switch-light switch-candy wireframe-mode-toggle wire-outline" onclick="">
 					<input type="checkbox" />
@@ -15,7 +15,7 @@
 				<p class="f-small">This setting will revert to OFF when you change pages.</p>
 			</section>
 
-			<section class="social-container footer-section-container wire-outline" id="anchor-social">
+			<section class="social-container footer-section-container u-flex--grow1 wire-outline" id="anchor-social">
 				<h3>Follow Me</h3>
 				<ul>
 					<?php if ( in_category('professional') ) : ?>
@@ -31,7 +31,7 @@
 				</ul>
 			</section>
 
-			<section class="contact-container footer-section-container wire-outline" id="anchor-contact">
+			<section class="contact-container footer-section-container u-flex--grow1 wire-outline" id="anchor-contact">
 				<?php if ( in_category('professional') ) : ?>
 					<div class="contact-work">
 						<h3>About Corry</h3>
@@ -71,7 +71,7 @@
 
 	<footer class="copyright-footer u-container wire-outline">
 		<div class="u-inner shadowed wire-outline">
-			<p class="copyright f-smallest">&copy;2006 - <span itemprop="copyrightYear"><?php echo date('Y'); ?></span> <a href="mailto:cfrydlewicz@gmail.com" target="_blank"><span itemprop="copyrightHolder">Corry Frydlewicz</span></a></p>
+			<p class="copyright f-smallest">&copy;2006-<span itemprop="copyrightYear"><?php echo date('Y'); ?></span> <a href="mailto:cfrydlewicz@gmail.com" target="_blank"><span itemprop="copyrightHolder">Corry Frydlewicz</span></a></p>
 		</div>
 	</footer>
 

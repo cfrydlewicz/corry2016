@@ -32,48 +32,61 @@ table {
 	}
 }
 
-blockquote {
-	margin: ( $margin * 2 ) 0;
-	padding: ( $margin * .5 ) $margin ( $margin * 1.2 ) ( $margin * .5 );
-	quotes: "\201C""\201D""\2018""\2019";
-	background-color: mix(white, $c-primary, 80%);
-	border-left: ( $margin * .5 ) solid mix(white, $c-primary, 60%);
-	&:before {
-		color: mix(white, $c-primary, 60%);
-		content: open-quote;
-		font-size: 5rem;
-		line-height: 0.1rem;
-		vertical-align: -3rem;
-	}
-	p {
-		display: block;
-		margin-top: ( $margin * -1.5 );
-		margin-left: ( $margin * 2 );
-		&:nth-last-child(2):after {
-			content: close-quote;
-		}
-		&:last-child {
-			margin-bottom: 0;
-		}
-		&.cite,
-		del { /* fallback in case the replacement script doesn't fire */
-			font-size: .9rem;
-			line-height: 1;
-			text-align: right;
-			margin-bottom: 0;
-		}
-		del { /* fallback in case the replacement script doesn't fire */
-			color: inherit;
-			text-decoration: none;
-		}
-	}
-}
-
 input,
 select,
 textarea {
 	max-width: 100%;
 }
+
+/* special classes */
+.copy-area {
+
+  .s-amazon,
+  a[href*="amazon.com"] {
+
+/* TODO: Style text links with an icon. */
+
+  }
+
+  .s-hbo,
+  a[href*="hbogo.com"],
+  a[href*="hbonow.com"] {
+
+/* TODO: Style text links with an icon. */
+
+  }
+
+  .s-hulu,
+  a[href*="hulu.com"] {
+
+/* TODO: Style text links with an icon. */
+
+  }
+
+  .s-netflix,
+  a[href*="netflix.com"] {
+
+/* TODO: Style text links with an icon. */
+
+  }
+
+  .s-spotify,
+  a[href*="spotify.com"] {
+
+/* TODO: Style spotify text links with an icon. */
+
+  }
+
+  .s-youtube,
+  a[href*="youtube.com"] {
+
+/* TODO: Style text links with an icon. */
+
+  }
+
+}
+
+
 
 
 /* BEGIN toggle switch CSS for Wireframe Mode toggle */
