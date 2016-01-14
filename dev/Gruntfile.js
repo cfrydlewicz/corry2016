@@ -53,12 +53,15 @@ module.exports = function(grunt) {
       },
       js : {
         src : [
-          'js/jquery-2.1.1.min.js',
           'js/modernizr.custom.js',
           'js/custom.js'
         ],
         dest : 'js/corry2016.concat.js'
       }
+    },
+
+    jshint: {
+      all: ['Gruntfile.js', 'js/custom.js']
     },
 
     uglify: {
@@ -86,6 +89,6 @@ module.exports = function(grunt) {
 	});
 
   // Default task(s).
-  grunt.registerTask('default', ['devUpdate', 'concat', 'sass', 'autoprefixer', 'cssmin', 'uglify']);
+  grunt.registerTask('default', ['devUpdate', 'concat', 'sass', 'autoprefixer', 'cssmin', 'jshint', 'uglify']);
 
 };

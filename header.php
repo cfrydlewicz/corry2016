@@ -8,6 +8,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic|Oxygen:300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url');?>/style.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url');?>/scripts.js"></script>
 	<?php wp_head(); ?>
 </head>
@@ -24,7 +25,7 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 <!-- END Facebook SDK -->
 
-<div class="total-wrapper"><div class="scan-lines">
+<div class="total-wrapper"><div class="scan-lines u-clearfix">
 
 	<!--[if lte IE 9]>
 		<section class="disruptor u-container">
@@ -63,7 +64,7 @@
 
 				<div class="nav-button nav-button--expandable nav-button--pro u-flex--grow1">
 					<a class="toplevel-link wire-outline" href="/category/pro/">Professional</a>
-					<div class="nav-button-expand-toggle u-clickable wire-outline">
+					<div class="nav-button-expand-toggle u-clickable u-faketextlink u-icomoon wire-outline">
 						<span class="u-visually-hidden">Professional Subcategories:</span>
 					</div>
 					<div class="nav-button-subcategories wire-outline">
@@ -73,7 +74,7 @@
 
 				<div class="nav-button nav-button--expandable nav-button--unpro u-flex--grow1">
 					<a class="toplevel-link wire-outline" href="/category/personal/">Personal</a>
-					<div class="nav-button-expand-toggle u-clickable wire-outline">
+					<div class="nav-button-expand-toggle u-clickable u-faketextlink u-icomoon wire-outline">
 						<span class="u-visually-hidden">Personal Subcategories:</span>
 					</div>
 					<div class="nav-button-subcategories wire-outline">
