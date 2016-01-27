@@ -4,17 +4,24 @@
   float: left;
   clear: both;
   width: 100%;
-  .u-inner {
-    width: 90%;
-    margin: 0px auto;
-    &:after {
-      clear: both;
-      content: '';
-      visibility: hidden;
-      display: block;
-      height: 0px;
-    }
+}
+.u-inner {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0px auto;
+  &:after {
+    clear: both;
+    content: '';
+    visibility: hidden;
+    display: block;
+    height: 0px;
   }
+}
+// Conditional inner elements by breakpoint
+@media #{only-sm} {
+  .u-inner.u-inner--not-sm {
+  	width: 100%;
+	}
 }
 
 .u-clear {
@@ -43,7 +50,8 @@
 .u-hidden {
 	display: none;
 }
-.u-nobreak {
+.u-nobreak,
+.u-nowrap {
 	white-space: nowrap;
 }
 
