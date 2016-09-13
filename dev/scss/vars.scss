@@ -17,15 +17,17 @@ $only-xl			: "only screen and (min-width: #{$bp-xl})" !default;
 $not-xl				: "only screen and (max-width: #{$bp-xl - 1})" !default;
 
 /* colors */
-$c-primary:		#636;		/* DEFINE ME */
-$c-secondary:	#636;		/* DEFINE ME */
-$c-accent:		#636;		/* DEFINE ME */
+$c-primary:			#376c7c;
+$c-secondary:		#3c377c;
+$c-accent:			#e85f00;
 
-$c-basetext:	#333;		/* DEFINE ME */
-$c-grey:			mix(white, $c-basetext, 50%);
+$c-basetext:		#484e4e;
+$c-grey:				mix(white, $c-basetext, 50%);
 
-$c-link:			#f00;		/* DEFINE ME */
-$c-link2:			#0f0;		/* DEFINE ME */
+$c-link:				#4978a3;
+$c-link2:				mix(white, $c-link, 20%);
+$c-link-light:	#8ab6d9;
+$c-link-light2:	mix(white, $c-link-light, 20%);
 
 /* spacing */
 $margin: 16px;

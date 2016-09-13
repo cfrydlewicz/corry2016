@@ -25,7 +25,7 @@
 			</div>
 
 			<div class="article-date wire-outline">
-				<p class="f-small"><?php echo word_count(); ?> words &bull; <?php the_date( 'Y.m.d', '', '' ); ?></p>
+				<p class="f-small"><?php echo word_count(); ?> words &bull; <?php the_date( 'Y.m.d', '', '' ); ?></p><!-- NOTE: Make sure dates are not links -->
 			</div>
 
 		</section>

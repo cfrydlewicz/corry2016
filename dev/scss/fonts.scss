@@ -105,7 +105,7 @@ p, li {
 }
 p {
   line-height: 1.8;
-	.copy-area & {
+	.copy-area &:not(:last-of-type) {
 		margin-bottom: $margin;
 	}
 }

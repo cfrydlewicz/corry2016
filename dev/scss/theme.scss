@@ -1,12 +1,5 @@
 /* Theme */
 
-html,
-body,
-.fullHeight {
-  height: 100%;
-  margin: 0;
-}
-
 .total-wrapper {
 	width: 100%;
 	max-width: 100%;
@@ -22,11 +15,23 @@ $scanLineOpacity: 0.25;
 	background-position-x: 50%;
 	background-attachment: fixed;
 	background-repeat: repeat-y;
-	background-size: 100% auto;
+	background-size: auto 100%;
+}
+@media #{$not-sm} {
+	.total-wrapper {
+		background-size: 100% auto;
+	}
 }
 .scan-lines {
   background: -webkit-repeating-linear-gradient(
     top,
+    transparent 0px,
+    transparent $scanLineWidth,
+    rgba(0,0,0,$scanLineOpacity) $scanLineWidth,
+    rgba(0,0,0,$scanLineOpacity) $scanLineWidth*2
+  );
+  background: repeating-linear-gradient(
+    to bottom,
     transparent 0px,
     transparent $scanLineWidth,
     rgba(0,0,0,$scanLineOpacity) $scanLineWidth,
@@ -50,6 +55,23 @@ $scanLineOpacity: 0.25;
 	border-color: mix(black, $c-primary, 80%);;
 }
 
+/* Header and footer edge-shading */
+.site-header,
+.navigation-container,
+.fat-footer,
+.copyright-footer {
+	color: #fff;
+	background-color: rgba(0,0,0,0.5);
+	> .shadowed {
+		background-color: rgba(11,22,25,0.7);
+	}
+}
+
+
+/* BEGIN HEADER REGION */
+.site-header {
+	border-top: 4px solid $c-accent;
+}
 .header-logo {
 	float: left;
 	clear: left;
@@ -66,11 +88,28 @@ $scanLineOpacity: 0.25;
 				fill: $c-link;
 			}
 		}
-		&:hover svg path {
+		& a:hover svg path {
 			fill: $c-link2;
 		}
 	}
+
+	/* experiment */
+	.logo-glitch {
+		position: absolute;
+		background-image: url('images/logo-header.png');
+		&.logo-glitch--1 {
+			top: 40px;
+			background-position: -5px 40px;
+		}
+		&.logo-glitch--2 {
+			top: 10px;
+			background-position: 10px 10px;
+		}
+	}
+
 } /* .header-logo */
+
+
 
 .subsection-logo {
 	float: left;
@@ -87,6 +126,7 @@ $scanLineOpacity: 0.25;
 	.category-pro &:before {content: ": pro";}
 	.page-id-640 &:before {content: ": about";}  /* About page */
 }
+
 
 .search-container {
 	float: right;
@@ -138,7 +178,16 @@ $scanLineOpacity: 0.25;
 	}
 } /* .search-container */
 
-/* Navigation */
+/* END HEADER REGION */
+
+
+/* BEGIN NAV REGION */
+.navigation-container {
+	margin-bottom: 1.5rem;
+	> .u-inner {
+		border-bottom-width: 2px;
+	}
+}
 .nav-button {
 	min-height: $min-interact;
 	min-width: $min-interact;
@@ -158,21 +207,76 @@ $scanLineOpacity: 0.25;
 	}
 }
 
-.fat-footer {
-	background-color: rgba(0,0,0,0.2);
-	> .shadowed {
-		background-color: mix(black, $c-primary, 80%);
-		color: #fff;
+/* END NAV REGION */
+
+
+/* BEGIN CONTENT & LISTING PAGES */
+
+.thumbnail-container {
+	position: relative;
+	box-sizing: border-box;
+	background-size: auto 200px;
+	max-height: 200px;
+	background-repeat: no-repeat;
+	border-top: 2px solid $c-accent;
+	border-bottom: 1px solid $c-primary;
+	.headline-container {
+		position: absolute;
+		top: $margin;
+		left: 5%;	/* mimic centering, based on 90% width */
+		padding-bottom: $margin * .5;
 	}
+}
+.categories-container {
+	border-top: 1px solid $c-primary;
+}
+@media #{$not-sm} {
+	.thumbnail-container {
+		background-size: 100% auto;
+		max-height: none;
+	}
+}
+
+
+/* BEGIN LISTING PAGES */
+.listing .post {
+	margin-bottom: 2 * $margin;	/* add buffer space before next post or footer */
+}
+.listing .article-excerpt-container {
+	border-top-width: 2px;
+}
+.listing .entry-summary {
+	padding-top: .5 * $margin;
+	padding-bottom: .5 * $margin;
+}
+.listing .post-meta-container {
+	border-bottom-width: 2px;
+}
+
+
+/* BEGIN CONTENT PAGES */
+
+
+/* END LISTING PAGES */
+
+
+
+
+
+/* BEGIN FOOTER REGION */
+.fat-footer {
 	.footer-section-container {
 		box-sizing: border-box;
 		min-width: 200px;
 	}
 }
+.copyright-footer {
+	color: mix(white, $c-basetext, 50%);
+}
+/* END FOOTER REGION */
 
 
-
-
+/* PAGINATION LINKS */
 .time-nav {
 	float: left;
 	clear: both;
@@ -186,6 +290,7 @@ $scanLineOpacity: 0.25;
 		}
 	}
 } /* .time-nav */
+
 
 .single {
 	.entry-content {
@@ -206,7 +311,6 @@ $scanLineOpacity: 0.25;
 	}
 	&.wp-caption {
 		padding: ( $margin * .5 );
-/*		border: 1px solid $c-grey;	*/
 		margin-bottom: ( $margin * 2 );
 		p,
 		figcaption {

@@ -1,5 +1,5 @@
 	<footer class="fat-footer u-container wire-outline">
-		<div class="u-inner shadowed u-flex-parent u-flex-parent--row-wrap u-flex-parent--space-between wire-outline">
+		<div class="u-inner u-inner--padded shadowed u-flex-parent u-flex-parent--row-wrap u-flex-parent--space-between wire-outline">
 
 			<section class="wireframe-toggle-container footer-section-container u-flex--grow1 wire-outline" id="anchor-wireframe-toggle">
 				<h3>Want to see this site in wireframe mode?</h3>
@@ -33,14 +33,14 @@
 
 			<section class="contact-container footer-section-container u-flex--grow1 wire-outline" id="anchor-contact">
 				<?php if ( in_category('professional') ) : ?>
-					<div class="contact-work">
+					<div class="contact-work copy-area">
 						<h3>About Corry</h3>
 						<p>Like Madonna, I only use my first name on my site. Not only because of my massive ego, but also because Frydlewicz is a logo challenge I find myself unprepared for.</p>
 						<p>I am currently <span class="availability availability--none c-grey">unavailable</span> for full-time or freelance work.</p>
 						<p><a href="/about/">Read more about Corry</a></p>
 					</div>
 				<?php else : ?>
-					<div class="contact-personal">
+					<div class="contact-personal copy-area">
 						<h3>Game With Me</h3>
 						<ul>
 							<li class="lol">
@@ -70,7 +70,7 @@
 	</footer>
 
 	<footer class="copyright-footer u-container wire-outline">
-		<div class="u-inner shadowed wire-outline">
+		<div class="u-inner u-inner--padded shadowed wire-outline">
 			<p class="copyright f-smallest">&copy;2006-<span itemprop="copyrightYear"><?php echo date('Y'); ?></span> <a href="mailto:cfrydlewicz@gmail.com" target="_blank"><span itemprop="copyrightHolder">Corry Frydlewicz</span></a></p>
 		</div>
 	</footer>

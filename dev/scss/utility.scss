@@ -6,6 +6,7 @@
   width: 100%;
 }
 .u-inner {
+	box-sizing: border-box;
   width: 90%;
   max-width: 1000px;
   margin: 0px auto;
@@ -16,7 +17,12 @@
     display: block;
     height: 0px;
   }
+	&.u-inner--padded {
+		padding-left: $margin;
+		padding-right: $margin;
+	}
 }
+
 // Conditional inner elements by breakpoint
 @media #{only-sm} {
   .u-inner.u-inner--not-sm {
@@ -80,18 +86,23 @@
 	display: -webkit-flex;
 	display: flex;
 	> .u-flex--grow1 {
+		-webkit-flex-grow: 1;
 		flex-grow: 1;
 	}
 	> .u-flex--grow2 {
+		-webkit-flex-grow: 2;
 		flex-grow: 2;
 	}
 	> .u-flex--grow3 {
+		-webkit-flex-grow: 3;
 		flex-grow: 3;
 	}
 	> .u-flex--grow4 {
+		-webkit-flex-grow: 4;
 		flex-grow: 4;
 	}
 	> .u-flex--grow5 {
+		-webkit-flex-grow: 5;
 		flex-grow: 5;
 	}
 }

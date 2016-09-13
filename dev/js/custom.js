@@ -2,7 +2,7 @@
 $(document).ready( function() {
 
 	// Wireframe Mode toggle
-	$('.wireframe-mode-toggle').click(function(){
+	$('.wireframe-mode-toggle').change(function(){
 		$('body').toggleClass("wireframe-mode-on");
 	});
 
