@@ -1,6 +1,8 @@
 /* non-text elements */
 
-img {
+img,
+figure,
+picture {
 	max-width: 100%;
 	height: auto;
 }
