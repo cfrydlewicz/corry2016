@@ -11,15 +11,31 @@ $scanLineWidth: 2px;
 $scanLineOpacity: 0.25;
 
 .total-wrapper {
-	background-image: url("images/calm-cloudy-beach.jpg");
-	background-position-x: 50%;
+
+	/* IMG_0689 - Oakland September Sunrise 2016 */
+	background-image: url("images/bg/IMG_0689.optimized.sm.jpg");
+	@media #{$not-sm} {
+		background-image: url("images/bg/IMG_0689.optimized.jpg");
+	}
+	background-color: #c4d1ec;	/* image specific (matte) */
+
+	/* calm-cloudy-beach - found photo
+	background-image: url("images/bg/calm-cloudy-beach.optimized.jpg");
+	background-color: #adb9c5;	/* image specific (matte) */
+
+	/* inverted calm-cloudy-beach
+	background-image: url("images/bg/calm-cloudy-beach-inverted.optimized.jpg");
+	background-color: #998b82;	/* image specific (matte) */
+
+	background-position-x: 50% 100%;
 	background-attachment: fixed;
-	background-repeat: repeat-y;
+	background-repeat: repeat-x;
 	background-size: auto 100%;
 }
 @media #{$not-sm} {
 	.total-wrapper {
 		background-size: 100% auto;
+		background-repeat: no-repeat;
 	}
 }
 .scan-lines {
@@ -38,6 +54,7 @@ $scanLineOpacity: 0.25;
     rgba(0,0,0,$scanLineOpacity) $scanLineWidth*2
   );
   background-size: 100% $scanLineWidth*2;
+  background-attachment: fixed;
 }
 
 /* Outdated Browser Disruptor */
@@ -61,39 +78,37 @@ $scanLineOpacity: 0.25;
 .fat-footer,
 .copyright-footer {
 	color: #fff;
-	background-color: rgba(0,0,0,0.5);
-	> .shadowed {
-		background-color: rgba(11,22,25,0.7);
-	}
+	background-color: rgba(0,0,0,0.7);
 }
 
 
 /* BEGIN HEADER REGION */
-.site-header {
-	border-top: 4px solid $c-accent;
+.site-header > .u-inner {
+	position: relative;
 }
+
 .header-logo {
 	float: left;
 	clear: left;
-	max-width: 40%;
-	padding: 1rem 0;
+	max-width: 100%;
+	padding: .5rem 0 .25rem;
 	svg {display: none;}
-	html.inlinesvg & {
+	html.inlinesvg & a {
 		img {display: none;}
 		svg {
 			display: block;
 			width: auto;
 			height: 60px;
 			path {
-				fill: $c-link;
+				fill: $c-lightest;
 			}
 		}
-		& a:hover svg path {
-			fill: $c-link2;
+		&:hover svg path {
+			fill: $c-nearwhite;
 		}
 	}
 
-	/* experiment */
+	/* experiment
 	.logo-glitch {
 		position: absolute;
 		background-image: url('images/logo-header.png');
@@ -105,7 +120,7 @@ $scanLineOpacity: 0.25;
 			top: 10px;
 			background-position: 10px 10px;
 		}
-	}
+	} */
 
 } /* .header-logo */
 
@@ -114,13 +129,15 @@ $scanLineOpacity: 0.25;
 .subsection-logo {
 	float: left;
 	clear: none;
-	font-family: 'Oxygen', 'Arimo', sans-serif;
-	font-size: 2.7rem;
-	line-height: 1;
-	color: $c-grey;
-	font-weight: normal;
-	margin-top: 10px;
-	margin-left: 16px;
+	&:not(:empty) {
+		font-family: 'Oxygen', 'Arimo', sans-serif;
+		font-size: 2.7rem;
+		line-height: 1;
+		color: $c-grey;
+		font-weight: normal;
+		margin-top: 10px;
+		margin-left: 16px;
+	}
 	.category-personal &:before {content: "";}
 	.category-games &:before {content: ": gaming";}
 	.category-pro &:before {content: ": pro";}
@@ -129,14 +146,27 @@ $scanLineOpacity: 0.25;
 
 
 .search-container {
-	float: right;
-	clear: right;
 	width: 40px;
 	height: 40px;
-	color: $c-grey;
 	cursor: pointer;
-	&:hover {
-		color: $c-link2;
+	position: absolute;
+	top: .5rem;
+	right: 0;
+	&.icon-search:before {
+		font-size: 1.5rem;
+		display: block;
+		text-align: right;
+		padding: .5rem;
+		color: $c-lightest;
+	}
+	&.icon-search:hover:before {
+		color: $c-nearwhite;
+	}
+	.search-form {
+		position: absolute;
+		top: 0;
+		right: 0;
+		@extend .u-flex-parent;
 	}
 	label {
 		float: left;
@@ -144,35 +174,52 @@ $scanLineOpacity: 0.25;
 	}
 	input {
 		box-sizing: border-box;
-		width: 0px;
-		padding: 0px;
-		height: 40px;
-		border: 0px;
 		background-color: #fff; /* pure white */
 		border-top-left-radius: $radius;
 		border-bottom-left-radius: $radius;
-		&.search-field {
-		}
 		&.search-submit {
+//			@extend .icon-search;
 			float: left;
 			clear: right;
-			text-indent: -9999px;
-			background-color: transparent;
-			color: transparent;
+			color: transparent;	// hide input text
+			background-color: $c-link-light;
 			cursor: pointer;
-			&:hover {background-color: rgba(242,249,255,0.2);}
+			border-top-right-radius: $radius;
+			border-bottom-right-radius: $radius;
+			color: $c-link;
+			&:hover {
+				color: $c-link2;
+			}
+		}
+	}
+	&.closed {
+		label {
+			height: 0;
+		}
+		input {
+			width: 0px;
+			padding: 0px;
+			border: 0px;
 		}
 	}
 	&.open {
+		input {
+			height: 40px;
+			border-color: $c-accent;
+			border-style: solid;
+			border-width: 0;
+		}
 		input.search-field {
-			width: 120px;
+			width: 150px;
 			padding: 0px .5rem;
+			border-width: 1px 0 1px 5px;
 		}
 		input.search-submit {
 			text-indent: 0px;
 			width: 40px;
 			background-color: transparent;
 			cursor: pointer;
+			border-width: 1px 1px 1px 0;
 			&:hover {background-color: rgba(242,249,255,0.2);}
 		}
 	}
@@ -183,28 +230,53 @@ $scanLineOpacity: 0.25;
 
 /* BEGIN NAV REGION */
 .navigation-container {
+	box-sizing: border-box;
+	padding: 0 3%;
 	margin-bottom: 1.5rem;
 	> .u-inner {
 		border-bottom-width: 2px;
 	}
+	a {
+		display: block;
+		line-height: 1;
+		color: $c-lightest;
+		&:hover {
+			color: $c-nearwhite;
+		}
+	}
 }
 .nav-button {
-	min-height: $min-interact;
-	min-width: $min-interact;
-	.toplevel-link {
-		padding: 2px 2px;
+	border-bottom: 4px solid transparent;	/* set up spacing */
+	.toplevel-link,
+	.nav-button-expand-toggle {
+		box-sizing: border-box;
+		padding: .5rem;
+		min-height: $min-interact;
+		min-width: $min-interact;
 	}
 	.nav-button-expand-toggle {
-		float: right;
-		clear: right;
+		display: none;
 		@extend .icon-plus;
 		&.expanded {
 			@extend .icon-minus;
 		}
 	}
+	@media #{$not-sm} {
+		display: block;
+		float: right;
+		clear: right;
+	}
+
 	.nav-button-subcategories:not(.expanded) {
 		display: none;
 	}
+
+	// Context highlighting
+	body.category-pro &.nav-button--pro,
+	body.category-unpro &.nav-button--unpro {
+		border-bottom-color: $c-accent;
+	}
+
 }
 
 /* END NAV REGION */
@@ -310,8 +382,8 @@ $scanLineOpacity: 0.25;
 		margin-right: auto;
 	}
 	&.wp-caption {
-		padding: ( $margin * .5 );
-		margin-bottom: ( $margin * 2 );
+		// padding: ( $margin * .5 );
+		margin-bottom: ( $margin * 1.5 );
 		p,
 		figcaption {
 			font-size: .9rem;
