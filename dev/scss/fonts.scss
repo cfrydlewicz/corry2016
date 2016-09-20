@@ -181,6 +181,10 @@ li {
 		line-height: 0.1rem;
 		vertical-align: -3rem;
 	}
+	&:after {
+		content: close-quote;
+		@extend .u-visually-hidden;
+	}
 	p {
 		display: block;
 		margin-top: ( $f-base-size * -1.5 );	/* align with large open quote */
