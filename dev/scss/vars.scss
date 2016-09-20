@@ -21,6 +21,9 @@ $c-primary:			#376c7c;
 $c-secondary:		#3c377c;
 $c-accent:			#e85f00;
 
+$c-nearwhite:		mix(white, $c-primary, 80%);
+$c-lightest:		mix(white, $c-primary, 60%);
+
 $c-basetext:		#484e4e;
 $c-grey:				mix(white, $c-basetext, 50%);
 
