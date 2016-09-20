@@ -129,14 +129,15 @@ $scanLineOpacity: 0.25;
 .subsection-logo {
 	float: left;
 	clear: none;
-	&:not(:empty) {
-		font-family: 'Oxygen', 'Arimo', sans-serif;
-		font-size: 2.7rem;
-		line-height: 1;
-		color: $c-grey;
-		font-weight: normal;
-		margin-top: 10px;
-		margin-left: 16px;
+	font-family: 'Oxygen', 'Arimo', sans-serif;
+	font-size: 1.25rem;
+	color: $c-grey;
+	font-weight: normal;
+	margin-top: .75rem;
+	margin-left: .5rem;
+	@media #{$not-sm} {
+		font-size: 2rem;
+		margin-top: 0;
 	}
 	.category-personal &:before {content: "";}
 	.category-games &:before {content: ": gaming";}
@@ -178,7 +179,7 @@ $scanLineOpacity: 0.25;
 		border-top-left-radius: $radius;
 		border-bottom-left-radius: $radius;
 		&.search-submit {
-//			@extend .icon-search;
+			// @extend .icon-search;
 			float: left;
 			clear: right;
 			color: transparent;	// hide input text
@@ -233,8 +234,42 @@ $scanLineOpacity: 0.25;
 	box-sizing: border-box;
 	padding: 0 3%;
 	margin-bottom: 1.5rem;
-	> .u-inner {
-		border-bottom-width: 2px;
+	.nav-button {
+		border-bottom: 4px solid transparent;	/* set up spacing */
+		&:hover {
+			border-bottom-color: $c-nearwhite;
+		}
+		.toplevel-link,
+		.nav-button-expand-toggle {
+			box-sizing: border-box;
+			padding: .5rem;
+			min-height: $min-interact;
+			min-width: $min-interact;
+		}
+		.nav-button-expand-toggle {
+			display: none;
+			@extend .icon-plus;
+			&.expanded {
+				@extend .icon-minus;
+			}
+		}
+		@media #{$not-sm} {
+			.nav-button-expand-toggle {
+				display: block;
+				float: right;
+				clear: right;
+			}
+		}
+		.nav-button-subcategories:not(.expanded) {
+			display: none;
+		}
+
+		// Context highlighting
+		body.category-pro &.nav-button--pro,
+		body.category-unpro &.nav-button--unpro {
+			border-bottom-color: $c-accent;
+		}
+
 	}
 	a {
 		display: block;
@@ -242,40 +277,10 @@ $scanLineOpacity: 0.25;
 		color: $c-lightest;
 		&:hover {
 			color: $c-nearwhite;
+			background-color: rgba(255,255,255,0.1);
 		}
 	}
-}
-.nav-button {
-	border-bottom: 4px solid transparent;	/* set up spacing */
-	.toplevel-link,
-	.nav-button-expand-toggle {
-		box-sizing: border-box;
-		padding: .5rem;
-		min-height: $min-interact;
-		min-width: $min-interact;
-	}
-	.nav-button-expand-toggle {
-		display: none;
-		@extend .icon-plus;
-		&.expanded {
-			@extend .icon-minus;
-		}
-	}
-	@media #{$not-sm} {
-		display: block;
-		float: right;
-		clear: right;
-	}
 
-	.nav-button-subcategories:not(.expanded) {
-		display: none;
-	}
-
-	// Context highlighting
-	body.category-pro &.nav-button--pro,
-	body.category-unpro &.nav-button--unpro {
-		border-bottom-color: $c-accent;
-	}
 
 }
 
