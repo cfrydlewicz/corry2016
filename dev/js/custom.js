@@ -15,12 +15,14 @@ $(document).ready( function() {
 				// done!
 			});
 			$('.search-field').focus();
+/* Disable toggling - reusing the search button as the submit input results in awkwardness on search results pages (where the search box defaults to open)
 		} else {
 			$(this).removeClass('open').addClass('closed').animate({
 				width: ["40px", "swing"]
 			}, 200, function(){
 				// done!
 			});
+*/
 		}
 	});
 

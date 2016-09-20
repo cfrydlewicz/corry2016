@@ -187,10 +187,6 @@ $scanLineOpacity: 0.25;
 			cursor: pointer;
 			border-top-right-radius: $radius;
 			border-bottom-right-radius: $radius;
-			color: $c-link;
-			&:hover {
-				color: $c-link2;
-			}
 		}
 	}
 	&.closed {

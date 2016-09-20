@@ -48,7 +48,12 @@
 			</div>
 			<div class="subsection-logo wire-outline"></div>
 			<div class="u-visually-hidden"><a href="#skip-to-content">Skip to the page content &gt;</a></div>
-			<div class="search-container icon-search closed wire-outline"><?php get_search_form(); ?></div>
+			<?php if ( is_search() ) : ?>
+				<div class="search-container icon-search open wire-outline"><?php get_search_form(); ?></div>
+			<?php else : ?>
+				<div class="search-container icon-search closed wire-outline"><?php get_search_form(); ?></div>
+			<?php endif; ?>
+
 		</div>
 	</header>
 
