@@ -8,51 +8,19 @@ $(document).ready( function() {
 
 	// search bar
 	$('.search-container').click(function(){
-		if ( $(this).hassClass("closed") ) {
-			$(this).removeClass('closed');
-			$(this).addClass('open');
-			$(this).animate({
-				width: ["160px", "swing"]
-			}, 200, function(){
-				// done!
-			});
-			$(this).children('form').children('div').children('.search-field').animate({
-				width: ["120px", "swing"],
-				padding: ["0px 10px", "swing"]
-			}, 200, function(){
-				// done!
-			});
-			$(this).children('form').children('div').children('.search-submit').animate({
-				width: ["30px", "swing"],
-				borderLeft: ["1px", "swing"]
+		if ( $(this).hasClass("closed") ) {
+			$(this).removeClass('closed').addClass('open').animate({
+				width: ["100%", "swing"]
 			}, 200, function(){
 				// done!
 			});
 			$('.search-field').focus();
 		} else {
-
-
-		$(this).removeClass('open');
-		$(this).addClass('closed');
-		$(this).animate({
-			width: ["0px", "swing"]
-		}, 200, function(){
-			// done!
-		});
-		$(this).children('form').children('div').children('.search-field').animate({
-			width: ["00px", "swing"],
-			padding: ["0px 10px", "swing"]
-		}, 200, function(){
-			// done!
-		});
-		$(this).children('form').children('div').children('.search-submit').animate({
-			width: ["0px", "swing"],
-			borderLeft: ["0px", "swing"]
-		}, 200, function(){
-			// done!
-		});
-
-
+			$(this).removeClass('open').addClass('closed').animate({
+				width: ["40px", "swing"]
+			}, 200, function(){
+				// done!
+			});
 		}
 	});
 
