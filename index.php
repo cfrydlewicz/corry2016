@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="<?php if ( !is_single() ) { echo "listing"; } ?>" id="skip-to-content">
+<section class="u-clearfix <?php if ( !is_single() ) { echo "listing"; } ?>" id="skip-to-content">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -9,8 +9,10 @@
 				get_template_part( 'content', get_post_format() );
 			endwhile; ?>
 
-			<div class="time-nav time-nav--bottom">
-				<?php posts_nav_link('<!--div class=\"clear\"></div-->','<div class="newer">Newer Posts</div>','<div class="older">Older Posts</div>'); ?>
+			<div class="time-nav time-nav--bottom u-container">
+				<div class="u-inner">
+					<?php posts_nav_link('<!--null-->','Newer Posts &rang;','&lang; Older Posts'); ?>
+				</div>
 			</div><!--.time-nav-->
 
 		<?php else : ?>

@@ -4,7 +4,7 @@ function theme_setup() {
 
 	// Enable support for Post Thumbnails
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 1440, 9999 ); // Unlimited height, soft crop
+	set_post_thumbnail_size( 1000, 9999 ); // Unlimited height, soft crop
 
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
