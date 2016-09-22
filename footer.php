@@ -1,46 +1,45 @@
 	<footer class="fat-footer u-container wire-outline">
-		<div class="u-inner u-inner--padded shadowed u-flex-parent u-flex-parent--row-wrap u-flex-parent--space-between wire-outline">
+		<div class="u-inner u-flex-parent u-flex-parent--row-wrap u-flex-parent--space-between wire-outline">
 
 			<section class="wireframe-toggle-container footer-section-container u-flex--grow1 wire-outline" id="anchor-wireframe-toggle">
-				<h3>Want to see this site in wireframe mode?</h3>
+				<h3>Wireframe Mode</h3>
 				<label class="switch-light switch-candy wireframe-mode-toggle wire-outline" onclick="">
 					<input type="checkbox" />
-					<strong>Wireframe Mode</strong>
+					<!--strong>Wireframe Mode</strong-->
 					<span>
 						<span class="wire-outline wire-cta">OFF</span>
 						<span class="wire-outline wire-cta">ON</span>
 						<a></a>
 					</span>
 				</label>
-				<p class="f-small">This setting will revert to OFF when you change pages.</p>
+				<p class="f-smallest">(This setting will revert to OFF when you change pages)</p>
 			</section>
 
 			<section class="social-container footer-section-container u-flex--grow1 wire-outline" id="anchor-social">
 				<h3>Follow Me</h3>
 				<ul>
 					<?php if ( in_category('professional') ) : ?>
-						<li class="linkedin"><a href="http://www.linkedin.com/in/corryart" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.linkedin.com']);" target="_blank">LinkedIn</a></li>
-						<li class="github"><a href="https://github.com/cfrydlewicz" target="_blank">GitHub</a></li>
-						<li class="stackoverflow"><a href="http://stackoverflow.com/users/967727/cfrydlewicz" target="_blank">StackOverflow</a></li>
+						<li class="linkedin"><a class="icon-linkedin" href="http://www.linkedin.com/in/corryart" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.linkedin.com']);" target="_blank"><span class="u-visually-hidden">LinkedIn</span></a></li>
+						<li class="github"><a class="icon-github" href="https://github.com/cfrydlewicz" target="_blank"><span class="u-visually-hidden">GitHub</span></a></li>
+						<!--li class="stackoverflow"><a class="icon-stackoverflow" href="http://stackoverflow.com/users/967727/cfrydlewicz" target="_blank"><span class="u-visually-hidden">StackOverflow</span></a></li-->
 					<?php else : ?>
-					  <li class="facebook"><a href="http://www.facebook.com/cfrydlewicz" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.facebook.com']);" target="_blank">Facebook</a></li>
-					  <li class="spotify"><a href="http://open.spotify.com/user/1232018881/playlist/59TxdkMRHa3DL54uXp9Y3c" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://spotify.com/']);" target="_blank">My Latest Stuff Spotify Playlist</a></li>
+					  <li class="facebook"><a class="icon-facebook2" href="http://www.facebook.com/cfrydlewicz" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.facebook.com']);" target="_blank"><span class="u-visually-hidden">Facebook</span></a></li>
+					  <li class="spotify"><a class="icon-spotify" href="http://open.spotify.com/user/1232018881/playlist/59TxdkMRHa3DL54uXp9Y3c" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://spotify.com/']);" target="_blank"><span class="u-visually-hidden">My Latest Stuff Spotify Playlist</span></a></li>
 					<?php endif; ?>
-				  <li class="twitter"><a href="http://www.twitter.com/cfrydlewicz" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.twitter.com']);" target="_blank">Twitter</a></li>
-				  <li class="googleplus"><a href="https://plus.google.com/u/0/103048907259001918186/about/p/pub" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://plus.google.com']);" target="_blank">Google+</a></li>
+				  <li class="twitter"><a class="icon-twitter" href="http://www.twitter.com/cfrydlewicz" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.twitter.com']);" target="_blank"><span class="u-visually-hidden">Twitter</span></a></li>
+				  <li class="googleplus"><a class="icon-google-plus" href="https://plus.google.com/u/0/103048907259001918186/about/p/pub" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://plus.google.com']);" target="_blank"><span class="u-visually-hidden">Google+</span></a></li>
 				</ul>
 			</section>
 
 			<section class="contact-container footer-section-container u-flex--grow1 wire-outline" id="anchor-contact">
 				<?php if ( in_category('professional') ) : ?>
-					<div class="contact-work copy-area">
+					<div class="contact-work">
 						<h3>About Corry</h3>
-						<p>Like Madonna, I only use my first name on my site. Not only because of my massive ego, but also because Frydlewicz is a logo challenge I find myself unprepared for.</p>
-						<p>I am currently <span class="availability availability--none c-grey">unavailable</span> for full-time or freelance work.</p>
+						<p>I am currently <span class="availability availability--none c-grey">Unavailable</span> for full-time or freelance work.</p>
 						<p><a href="/about/">Read more about Corry</a></p>
 					</div>
 				<?php else : ?>
-					<div class="contact-personal copy-area">
+					<div class="contact-personal">
 						<h3>Game With Me</h3>
 						<ul>
 							<li class="lol">
@@ -70,7 +69,7 @@
 	</footer>
 
 	<footer class="copyright-footer u-container wire-outline">
-		<div class="u-inner u-inner--padded shadowed wire-outline">
+		<div class="u-inner wire-outline">
 			<p class="copyright f-smallest">&copy;2006-<span itemprop="copyrightYear"><?php echo date('Y'); ?></span> <a href="mailto:cfrydlewicz@gmail.com" target="_blank"><span itemprop="copyrightHolder">Corry Frydlewicz</span></a></p>
 		</div>
 	</footer>
