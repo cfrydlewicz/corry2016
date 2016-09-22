@@ -27,7 +27,7 @@ $scanLineOpacity: 0.25;
 	background-image: url("images/bg/calm-cloudy-beach-inverted.optimized.jpg");
 	background-color: #998b82;	/* image specific (matte) */
 
-	background-position-x: 50% 100%;
+	background-position: 50% 100%;
 	background-attachment: fixed;
 	background-repeat: repeat-x;
 	background-size: auto 100%;
@@ -60,7 +60,7 @@ $scanLineOpacity: 0.25;
 /* Outdated Browser Disruptor */
 .disruptor {
 	background-color: mix(white, $c-accent, 80%);
-	border-bottom: 2px solid $c-accent;
+	border-bottom: 4px solid $c-accent;
 	padding: ($margin * .5) 0;
 }
 
@@ -107,24 +107,7 @@ $scanLineOpacity: 0.25;
 			fill: $c-nearwhite;
 		}
 	}
-
-	/* experiment
-	.logo-glitch {
-		position: absolute;
-		background-image: url('images/logo-header.png');
-		&.logo-glitch--1 {
-			top: 40px;
-			background-position: -5px 40px;
-		}
-		&.logo-glitch--2 {
-			top: 10px;
-			background-position: 10px 10px;
-		}
-	} */
-
 } /* .header-logo */
-
-
 
 .subsection-logo {
 	float: left;
@@ -228,8 +211,11 @@ $scanLineOpacity: 0.25;
 /* BEGIN NAV REGION */
 .navigation-container {
 	box-sizing: border-box;
-	padding: 0 3%;
 	margin-bottom: 1.5rem;
+	padding: 0 3%;	/* match .u-inner (visually) */
+	@media #{$not-sm} {
+		padding: 0 4%;	/* match .u-inner (visually) */
+	}
 	.nav-button {
 		border-bottom: 4px solid transparent;	/* set up spacing */
 		&:hover {
@@ -249,15 +235,48 @@ $scanLineOpacity: 0.25;
 				@extend .icon-minus;
 			}
 		}
+		.nav-button-subcategories {
+			display: none;
+			position: absolute;
+			left: 0;
+			top: 32px;	/* match height of .nav-button--expandable */
+			background-color: rgba(0,0,0,0.85);
+			box-sizing: border-box;
+			border: 1px solid $c-lightest;
+			border-top-width: 4px;
+			padding: .5rem;
+			width: 100%;
+			z-index: 2;
+			ul.menu {
+				list-style: none;
+				a {
+					line-height: 2rem;
+				}
+			}
+		}
 		@media #{$not-sm} {
+			&.nav-button--expandable {
+				// extend .u-flex-parent
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				position: relative;
+				> * {
+					box-sizing: border-box;
+				}
+			}
+			.toplevel-link {
+				// extend .u-flex--grow1
+				-webkit-flex-grow: 1;
+				flex-grow: 1;
+			}
 			.nav-button-expand-toggle {
 				display: block;
 				float: right;
 				clear: right;
 			}
-		}
-		.nav-button-subcategories:not(.expanded) {
-			display: none;
 		}
 
 		// Context highlighting
@@ -267,7 +286,8 @@ $scanLineOpacity: 0.25;
 		}
 
 	}
-	a {
+	a,
+	.u-faketextlink {
 		display: block;
 		line-height: 1;
 		color: $c-lightest;

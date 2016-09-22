@@ -96,4 +96,6 @@
 
 	</section><!-- /.navigation-container -->
 
+	<div class="u-clear"></div>
+
 <!--/div .total-wrapper expands beyond this file and ends in footer.php -->
