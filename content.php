@@ -31,7 +31,7 @@
 		<div class="entry-summary copy-area"><?php the_excerpt(); ?></div>
 
 		<div class="entry-cta">
-			<a href="<?php esc_url( get_permalink() ); ?>" rel="bookmark">Read the Article <span>&rang;</span></a>
+			<a href="<?php the_permalink(); ?>" rel="bookmark">Read the Article <span>&rang;</span></a>
 		</div>
 
 	</div><!-- /.entry-container -->
