@@ -105,8 +105,21 @@ p, li {
 }
 p {
   line-height: 1.8;
-	.copy-area &:not(:last-of-type) {
-		margin-bottom: $margin;
+	.copy-area & {
+
+		/* Break long lines and hyphenate them */
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		-ms-word-break: break-all;
+		word-break: break-word;
+		-ms-hyphens: auto;
+		-moz-hyphens: auto;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+
+		&:not(:last-of-type) {
+			margin-bottom: $margin;
+		}
 	}
 }
 li {
@@ -202,6 +215,7 @@ li {
 			font-size: .9rem;
 			line-height: 1;
 			text-align: right;
+			margin-top: 0;
 			margin-bottom: 0;
 		}
 		del { /* fallback in case the replacement script doesn't fire */
@@ -258,72 +272,85 @@ li {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-home3:before {
-	content: "\e900";
+.icon-mana-blue .path1:before {
+  content: "\e918";
 }
-.icon-profile:before {
-	content: "\e901";
+.icon-mana-blue .path2:before {
+  content: "\e919";
+  margin-left: -1em;
+}
+.icon-home3:before {
+  content: "\e903";
 }
 .icon-bubbles:before {
-	content: "\e902";
-}
-.icon-search:before {
-	content: "\e916";
+  content: "\e904";
 }
 .icon-heart:before {
-	content: "\e903";
+  content: "\e905";
 }
 .icon-plus:before {
-	content: "\e904";
+  content: "\e906";
 }
 .icon-minus:before {
-	content: "\e905";
+  content: "\e907";
 }
 .icon-cross:before {
-	content: "\e906";
+  content: "\e908";
 }
 .icon-checkmark:before {
-	content: "\e907";
+  content: "\e909";
 }
 .icon-arrow-up2:before {
-	content: "\e908";
+  content: "\e90a";
 }
 .icon-arrow-right2:before {
-	content: "\e909";
+  content: "\e90b";
 }
 .icon-arrow-down2:before {
-	content: "\e90a";
+  content: "\e90c";
 }
 .icon-arrow-left2:before {
-	content: "\e90b";
+  content: "\e90d";
 }
 .icon-mail2:before {
-	content: "\e90c";
+  content: "\e90e";
 }
 .icon-google-plus:before {
-	content: "\e90d";
+  content: "\e90f";
 }
 .icon-facebook2:before {
-	content: "\e90e";
+  content: "\e910";
 }
 .icon-twitter:before {
-	content: "\e90f";
+  content: "\e911";
 }
 .icon-steam:before {
-	content: "\e910";
+  content: "\e912";
 }
 .icon-github:before {
-	content: "\e911";
+  content: "\e913";
 }
 .icon-wordpress:before {
-	content: "\e912";
+  content: "\e914";
 }
 .icon-skype:before {
-	content: "\e913";
+  content: "\e915";
 }
 .icon-reddit:before {
-	content: "\e914";
+  content: "\e916";
 }
-.icon-linkedin2:before {
-	content: "\e915";
+.icon-search:before {
+  content: "\e917";
+}
+.icon-spotify:before {
+  content: "\e900";
+}
+.icon-twitch:before {
+  content: "\e91a";
+}
+.icon-linkedin:before {
+  content: "\e901";
+}
+.icon-stackoverflow:before {
+  content: "\e902";
 }

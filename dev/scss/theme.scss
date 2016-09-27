@@ -288,7 +288,7 @@ $scanLineOpacity: 0.25;
 
 		// Context highlighting
 		body.category-pro &.nav-button--pro,
-		body.category-unpro &.nav-button--unpro {
+		body.category-personal &.nav-button--unpro {
 			border-bottom-color: $c-accent;
 		}
 
@@ -436,9 +436,6 @@ $scanLineOpacity: 0.25;
 
 
 /* BEGIN FOOTER REGION */
-footer {
-
-}
 .fat-footer {
 	.footer-section-container {
 		box-sizing: border-box;
@@ -460,10 +457,10 @@ footer {
 		&.social-container {
 			li {
 				float: left;
-				margin-right: .25rem;
-				margin-bottom: .25rem;
+				margin-right: .5rem;
+				margin-bottom: .5rem;
 				a[class^=icon-] {
-					font-size: 1.75rem;
+					font-size: 2rem;
 				}
 			}
 		}
@@ -478,11 +475,31 @@ footer {
 
 
 .single {
-	.entry-content {
+	.entry-content,
+	.post-article-container {
 		padding: $margin;
 	} /* .entry-content */
 	.attachment-post-thumbnail {
 		margin: 1rem auto;
+	}
+	.sharedaddy {
+		margin-top: 1.5rem;
+		h3.sd-title::before {
+			display: none;	/* remove small line above share widget */
+		}
+	}
+	.article-tags-container {
+		margin-bottom: 1.5rem;
+		p {
+			font-size: .85rem;
+			line-height: 1.4;
+		}
+	}
+	.favorite-posts-container {
+		margin-bottom: 1.5rem;
+	}
+	.discuss-container {
+		// TODO
 	}
 } /* .single */
 
