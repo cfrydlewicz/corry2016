@@ -1,5 +1,16 @@
 <?php get_header(); ?>
 
+<?php if ( in_category('gaming') ) : ?>
+
+	<section class="u-clearfix twitch-frame u-container">
+		<div class="u-inner">
+			<iframe src="https://player.twitch.tv/?channel=ultros_the_octopus" frameborder="0" scrolling="no" height="378" width="620"></iframe>
+			<a href="https://www.twitch.tv/ultros_the_octopus?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Watch live video from ultros_the_octopus on www.twitch.tv</a>
+		</div>
+	</section>
+
+<?php endif; ?>
+
 <section class="u-clearfix <?php if ( !is_single() ) { echo "listing"; } ?>" id="skip-to-content">
 
 		<?php if ( have_posts() ) : ?>
