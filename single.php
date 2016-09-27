@@ -60,12 +60,12 @@
 				<div class="discuss-button-container wire-outline">
 
 					<div class="discuss-button discuss--twitter wire-outline">
-						<a href="https://twitter.com/intent/tweet?text=re:%20http://corry.us/?p=<?php get_the_ID(); ?>&via=cfrydlewicz">Discuss on Twitter</a>
+						<a href="https://twitter.com/intent/tweet?text=re:%20http://corry.us/?p=<?php the_ID(); ?>&via=cfrydlewicz">Discuss on Twitter</a>
 					</div>
 
 					<div class="discuss-button discuss--facebook wire-outline">
 						<!-- use data-layout="button_count" for button w/ post count -->
-						<div class="fb-share-button" data-href="http://corry.us/?p=<?php get_the_ID(); ?>" data-layout="link"></div>
+						<div class="fb-share-button" data-href="http://corry.us/?p=<?php the_ID(); ?>" data-layout="link"></div>
 					</div>
 
 				</div>
