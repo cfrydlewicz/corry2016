@@ -4,14 +4,14 @@
 
 	<div class="entry-container u-inner wire-outline">
 
-		<h2 class="entry-title"><?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' ); ?></h2>
+		<h2 class="entry-title wire-outline"><?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' ); ?></h2>
 
 		<div class="article-stats wire-outline">
 			<span class="article-wordcount u-nowrap"><?php echo word_count(); ?> words</span>&nbsp;&nbsp;|&nbsp;&nbsp;
 			<span class="article-date u-nowrap"><?php the_date( 'Y.m.d', '', '' ); ?></span><!-- NOTE: Make sure dates are not links -->
 		</div>
 
-		<div class="categories-container">
+		<div class="categories-container wire-outline">
 			<span class="u-visually-hidden">Categories:&nbsp;</span>
 			<span class="cat-items"><?php
 				$taxonomy = 'category';
@@ -28,10 +28,10 @@
 
 		<div class="u-clear"></div>
 
-		<div class="entry-summary copy-area"><?php the_excerpt(); ?></div>
+		<div class="entry-summary copy-area wire-outline"><?php the_excerpt(); ?></div>
 
 		<div class="entry-cta">
-			<a href="<?php the_permalink(); ?>" rel="bookmark">Read the Article <span>&rang;</span></a>
+			<a href="<?php the_permalink(); ?>" rel="bookmark" class="button-link">Read the Article <span>&rang;</span></a>
 		</div>
 
 	</div><!-- /.entry-container -->

@@ -1,14 +1,13 @@
 	<footer class="fat-footer u-container wire-outline">
-		<div class="u-inner u-flex-parent u-flex-parent--row-wrap u-flex-parent--space-between wire-outline">
+		<div class="u-inner u-flex-parent u-flex-parent--space-between wire-outline">
 
 			<section class="wireframe-toggle-container footer-section-container u-flex--grow1 wire-outline" id="anchor-wireframe-toggle">
 				<h3>Wireframe Mode</h3>
 				<label class="switch-light switch-candy wireframe-mode-toggle wire-outline" onclick="">
-					<input type="checkbox" />
-					<!--strong>Wireframe Mode</strong-->
+					<input type="checkbox" id="wireframe-toggle" />
 					<span>
-						<span class="wire-outline wire-cta">OFF</span>
-						<span class="wire-outline wire-cta">ON</span>
+						<span class="wire-cta">OFF</span>
+						<span class="wire-cta">ON</span>
 						<a></a>
 					</span>
 				</label>

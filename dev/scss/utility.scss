@@ -130,6 +130,10 @@
 	-webkit-justify-content: space-between;
 	justify-content: space-between;
 }
+.u-flex-parent--center {
+	-webkit-justify-content: center;
+	justify-content: center;
+}
 
 /* Responsive Shortcut Classes */
 @media #{$only-sm} {

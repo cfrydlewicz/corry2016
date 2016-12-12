@@ -40,20 +40,6 @@
 				<p><strong>Tags:</strong> <span class="tag-links"><?php the_tags( '', ', ', '' ); ?></span></p>
 			</div>
 
-			<div class="favorite-posts-container wire-outline">
-				<h3>Other Articles You May Enjoy</h3>
-				<div class="favorite-posts">
-					<?php $the_query = new WP_Query( array( 'tag' => 'favorite-posts', 'numberposts' => 2 ) ); ?>
-					<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-						<div class="post wire-outline" style="background-image: url('<?php get_post_thumbnail_url(); ?>');">
-							<p class="f-larger"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></p>
-						</div>
-					<?php endwhile;
-						wp_reset_postdata();
-					?>
-				</div>
-			</div><!-- /.favorite-posts-container -->
-
 			<div class="discuss-container wire-outline">
 				<h3>Comments?</h3>
 				<p>Instead of using a standard comment thread, I've switched to discussion platforms you probably already use.</p>
@@ -71,6 +57,20 @@
 				</div>
 				<p class="f-small"><strong>Note:</strong> Remember to tag me if you want a response.</p>
 			</div>
+
+			<div class="favorite-posts-container wire-outline">
+				<h3>Other Articles You May Enjoy</h3>
+				<div class="favorite-posts">
+					<?php $the_query = new WP_Query( array( 'tag' => 'favorite-posts', 'numberposts' => 2 ) ); ?>
+					<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+						<div class="post wire-outline" style="background-image: url('<?php get_post_thumbnail_url(); ?>');">
+							<p class="f-larger"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></p>
+						</div>
+					<?php endwhile;
+						wp_reset_postdata();
+					?>
+				</div>
+			</div><!-- /.favorite-posts-container -->
 
 		</section><!-- /.post-article-container -->
 

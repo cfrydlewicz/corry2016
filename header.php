@@ -36,8 +36,9 @@
 	<![endif]-->
 
 	<header class="site-header u-container wire-outline">
-		<div class="u-inner wire-outline">
-			<div class="header-logo wire-outline">
+
+		<section class="header-logo wire-outline u-clearfix">
+			<div class="main-logo">
 				<a href="/" title="Go to the homepage.">
 					<?php if ( !is_single() ) : ?>
 						<h1 class="u-visually-hidden">Corry's Blog</h1>
@@ -48,53 +49,56 @@
 			</div>
 			<div class="subsection-logo wire-outline"></div>
 			<div class="u-visually-hidden"><a href="#skip-to-content">Skip to the page content &gt;</a></div>
-			<?php if ( is_search() ) : ?>
-				<div class="search-container icon-search open wire-outline"><?php get_search_form(); ?></div>
-			<?php else : ?>
-				<div class="search-container icon-search closed wire-outline"><?php get_search_form(); ?></div>
-			<?php endif; ?>
+		</section><!-- /.header-logo -->
 
-		</div>
+		<?php if ( is_search() ) : ?>
+			<section class="header-search open wire-outline">
+		<?php else : ?>
+			<section class="header-search closed wire-outline">
+		<?php endif; ?>
+				<div class="search-container icon-search wire-outline"><?php get_search_form(); ?></div>
+		</section><!-- /.header-search -->
+
+		<section class="navigation-container wire-outline">
+			<nav class="navigation-parent u-flex-parent u-flex-parent--row-nowrap u-flex-parent--space-between">
+
+				<?php if ( !is_front_page() ) : ?>
+					<div class="nav-button nav-button--home">
+						<a class="icon-home3 toplevel-link wire-outline" href="/" title="Home Page"><span class="u-visually-hidden">Home</span></a>
+					</div>
+				<?php endif; ?>
+
+				<div class="nav-button nav-button--expandable nav-button--pro u-flex--grow1">
+					<a class="toplevel-link wire-outline" href="/category/pro/">Professional</a>
+					<div class="nav-button-expand-toggle u-clickable u-faketextlink u-icomoon wire-outline">
+						<span class="u-visually-hidden">Professional Subcategories:</span>
+					</div>
+					<div class="nav-button-subcategories wire-outline">
+						<?php wp_nav_menu( array('menu' => 'Professional' )); ?>
+					</div>
+				</div>
+
+				<div class="nav-button nav-button--expandable nav-button--unpro u-flex--grow1">
+					<a class="toplevel-link wire-outline" href="/category/personal/">Personal</a>
+					<div class="nav-button-expand-toggle u-clickable u-faketextlink u-icomoon wire-outline">
+						<span class="u-visually-hidden">Personal Subcategories:</span>
+					</div>
+					<div class="nav-button-subcategories wire-outline">
+						<?php wp_nav_menu( array('menu' => 'Personal' )); ?>
+					</div>
+				</div>
+
+				<?php if ( !is_page( 640 )  ) : // if not on the about page ?>
+					<div class="nav-button nav-button--about wire-outline u-flex--grow1">
+						<a class="toplevel-link wire-outline" href="/about/">About</a>
+					</div>
+				<?php endif; ?>
+
+			</nav>
+
+		</section><!-- /.navigation-container -->
+
 	</header>
-
-	<section class="navigation-container u-container wire-outline">
-		<nav class="navigation-parent u-flex-parent u-flex-parent--row-nowrap u-flex-parent--space-between">
-
-			<?php if ( !is_front_page() ) : ?>
-				<div class="nav-button nav-button--home">
-					<a class="icon-home3 toplevel-link wire-outline" href="/" title="Home Page"><span class="u-visually-hidden">Home</span></a>
-				</div>
-			<?php endif; ?>
-
-			<div class="nav-button nav-button--expandable nav-button--pro u-flex--grow1">
-				<a class="toplevel-link wire-outline" href="/category/pro/">Professional</a>
-				<div class="nav-button-expand-toggle u-clickable u-faketextlink u-icomoon wire-outline">
-					<span class="u-visually-hidden">Professional Subcategories:</span>
-				</div>
-				<div class="nav-button-subcategories wire-outline">
-					<?php wp_nav_menu( array('menu' => 'Professional' )); ?>
-				</div>
-			</div>
-
-			<div class="nav-button nav-button--expandable nav-button--unpro u-flex--grow1">
-				<a class="toplevel-link wire-outline" href="/category/personal/">Personal</a>
-				<div class="nav-button-expand-toggle u-clickable u-faketextlink u-icomoon wire-outline">
-					<span class="u-visually-hidden">Personal Subcategories:</span>
-				</div>
-				<div class="nav-button-subcategories wire-outline">
-					<?php wp_nav_menu( array('menu' => 'Personal' )); ?>
-				</div>
-			</div>
-
-			<?php if ( !is_page( 640 )  ) : // if not on the about page ?>
-				<div class="nav-button nav-button--about wire-outline u-flex--grow1">
-					<a class="toplevel-link wire-outline" href="/about/">About</a>
-				</div>
-			<?php endif; ?>
-
-		</nav>
-
-	</section><!-- /.navigation-container -->
 
 	<div class="u-clear"></div>
 

@@ -2,7 +2,7 @@
 
 <?php if ( in_category('gaming') ) : ?>
 
-	<section class="u-clearfix twitch-frame u-container">
+	<section class="u-clearfix twitch-frame u-container wire-outline">
 		<div class="u-inner">
 			<iframe src="https://player.twitch.tv/?channel=ultros_the_octopus" frameborder="0" scrolling="no" height="378" width="620"></iframe>
 			<a href="https://www.twitch.tv/ultros_the_octopus?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Watch live video from ultros_the_octopus on www.twitch.tv</a>
@@ -20,9 +20,9 @@
 				get_template_part( 'content', get_post_format() );
 			endwhile; ?>
 
-			<div class="time-nav time-nav--bottom u-container">
+			<div class="time-nav time-nav--bottom u-container wire-outline">
 				<div class="u-inner">
-					<?php posts_nav_link('<!--null-->','Newer Posts &rang;','&lang; Older Posts'); ?>
+					<?php posts_nav_link('<!--null-->','Newer Posts <span>&rang;</span>','<span>&lang;</span> Older Posts'); ?>
 				</div>
 			</div><!--.time-nav-->
 

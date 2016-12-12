@@ -2,15 +2,16 @@
 $(document).ready( function() {
 
 	// Wireframe Mode toggle
+	$('#wireframe-toggle').removeAttr('checked');	// default to off on page load
 	$('.wireframe-mode-toggle').change(function(){
 		$('body').toggleClass("wireframe-mode-on");
 	});
 
 	// search bar
-	$('.search-container').click(function(){
+	$('.header-search').click(function(){
 		if ( $(this).hasClass("closed") ) {
 			$(this).removeClass('closed').addClass('open').animate({
-				width: ["100%", "swing"]
+				width: ["190px", "swing"]
 			}, 200, function(){
 				// done!
 			});
@@ -75,5 +76,38 @@ $(document).ready( function() {
 			return $("<cite />", {html: $(this).html()});
 		});
 	});
+
+
+
+	// shrink the fixed header after scrolling down
+	$(window).on('scroll', function() {
+		if (parseInt($(window).width()) > 1023) {
+
+			var y_scroll_pos = window.pageYOffset;
+			var scroll_pos_test = 160;
+
+			// If scrolled down far enough...
+			if (y_scroll_pos > scroll_pos_test) {
+				// shrink the logo
+				if ( $('html').hasClass('inlinesvg') ) {
+					$('.header-logo .main-logo svg').animate({height:30},10);
+				} else {
+					$('.header-logo .main-logo img').animate({height:30},10);
+				}
+				$('.header-logo .subsection-logo').animate({'font-size':20},10);
+
+			// If not scrolled down far enough...
+			} else {
+				// un-shrink the logo
+				if ( $('html').hasClass('inlinesvg') ) {
+					$('.header-logo .main-logo svg').animate({height:50},10);
+				} else {
+					$('.header-logo .main-logo img').animate({height:50},10);
+				}
+				$('.header-logo .subsection-logo').animate({'line-height':20},10);
+			}
+
+		}
+	});	// END shrink the fixed header after scrolling down
 
 });
