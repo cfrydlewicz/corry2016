@@ -2,33 +2,34 @@
 
 <?php the_post(); ?>
 
-<article class="u-container wire-outline" id="anchor-single-article">
-	<div class="u-inner shadowed wire-outline">
+<article class="post post-<?php the_ID(); ?> u-clearfix thumbnail-container u-container wire-outline" id="anchor-single-article">
 
-		<section class="article-thumbnail wire-outline" style="background-image: url('<?php get_post_thumbnail_url(); ?>');" id="skip-to-content">
+	<img src="<?php get_post_thumbnail_url(); ?>" alt="Thumbnail Image for <?php the_title(); ?>" />
 
-			<div class="article-categories wire-outline">
-				<h4><span class="u-visually-hidden">Categories: </span><?php
-					$taxonomy = 'category';
-					$post_terms = wp_get_object_terms( $post->ID, $taxonomy, array( 'fields' => 'ids' ) );
-					$separator = ' ';
-					if ( !empty( $post_terms ) && !is_wp_error( $post_terms ) ) {
-						$term_ids = implode( ',' , $post_terms );
-						$terms = wp_list_categories( 'title_li=&style=none&echo=0&taxonomy=' . $taxonomy . '&include=' . $term_ids );
-						$terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
-						echo  $terms;
-						} ?></h4>
-			</div>
+	<div class="entry-container u-inner wire-outline">
 
-			<div class="article-title wire-outline">
-				<h1><?php the_title(); ?></h1>
-			</div>
+		<h1 class="entry-title wire-outline"><?php the_title(); ?></h1>
+		<div class="article-stats wire-outline">
+			<span class="article-wordcount u-nowrap"><?php echo word_count(); ?> words</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<span class="article-date u-nowrap"><?php the_date( 'Y.m.d', '', '' ); ?></span><!-- NOTE: Make sure dates are not links -->
+		</div>
 
-			<div class="article-date wire-outline">
-				<p class="f-small"><?php echo word_count(); ?> words &bull; <?php the_date( 'Y.m.d', '', '' ); ?></p><!-- NOTE: Make sure dates are not links -->
-			</div>
+		<div class="categories-container wire-outline">
+			<span class="u-visually-hidden">Categories:&nbsp;</span>
+			<span class="cat-items"><?php
+				$taxonomy = 'category';
+				$post_terms = wp_get_object_terms( $post->ID, $taxonomy, array( 'fields' => 'ids' ) );
+				$separator = ', ';
+				if ( !empty( $post_terms ) && !is_wp_error( $post_terms ) ) {
+					$term_ids = implode( ',' , $post_terms );
+					$terms = wp_list_categories( 'title_li=&style=none&echo=0&taxonomy=' . $taxonomy . '&include=' . $term_ids );
+					$terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
+					echo $terms;
+				}
+			?></span>
+		</div>
 
-		</section>
+		<div class="u-clear"></div>
 
 		<div class="copy-area entry-content wire-outline">
 			<?php the_content(); ?>
