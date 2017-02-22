@@ -127,6 +127,9 @@ $scanLineOpacity: 0.25;
 			font-weight: normal;
 			margin-top: .75rem;
 			margin-left: .5rem;
+			&:empty {
+				display: none;
+			}
 			@media #{$not-sm} {
 				font-size: 2rem;
 				margin-top: 0;
@@ -307,7 +310,20 @@ $scanLineOpacity: 0.25;
 			}
 		}
 
+		@media #{$not-sm} {
+			.navigation-parent {
+				height: 100%;
+			}
+		}
+
 	}	/* /.navigation-container */
+
+	@media #{$not-sm} {
+		.header-search,
+		.navigation-container {
+			height: auto;	/* let the heights stretch */
+		}
+	}
 
 }	/* /.site-header */
 
@@ -363,7 +379,6 @@ $scanLineOpacity: 0.25;
 			-ms-flex-order: 2;							/* TWEENER - IE 10 */
 			-webkit-order: 2;								/* NEW - Chrome */
 			order: 2;
-			height: 100%;
 			.nav-button .nav-button-expand-toggle,
 			.nav-button .toplevel-link {
 				height: 100%;
@@ -420,6 +435,9 @@ $scanLineOpacity: 0.25;
 		margin-bottom: .5rem;
 		p {
 			line-height: 1.4;
+			@media #{$not-sm} {
+				font-size: 1.3rem;
+			}
 		}
 	}
 	.entry-cta {
