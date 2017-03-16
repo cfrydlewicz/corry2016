@@ -4,7 +4,7 @@ function theme_setup() {
 
 	// Enable support for Post Thumbnails
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 1000, 9999 ); // Unlimited height, soft crop
+	set_post_thumbnail_size( 1064, 9999 ); // Unlimited height, soft crop
 
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
@@ -32,15 +32,6 @@ function post_thumbnail() {
     echo '<img src="'.bloginfo('template_url').'/images/thumbnail-default.jpg" />';
   }
 
-}
-
-function post_date() {
-	// Set up and print post meta information.
-	printf( '<span class="entry-date"><a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s">%3$s</time></a></span>',
-		esc_url( get_permalink() ),
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() )
-	);
 }
 
 function get_top_parent($cat){
