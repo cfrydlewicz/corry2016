@@ -398,8 +398,6 @@ $scanLineOpacity: 0.25;
 .thumbnail-container {
 	position: relative;
 	box-sizing: border-box;
-	border-top: 4px solid $c-nearblack;
-/*	background-color: rgba(0,0,0,.85);	*/
 	img:first-child {
 		display: block;
 		width: 100%;
@@ -409,6 +407,9 @@ $scanLineOpacity: 0.25;
 	padding: 1rem;
 	border: 1px solid $c-grey;
 	background-color: rgba(255,255,255,0.85);
+	.single & {
+		background-color: rgba(255,255,255,0.9);	// more opaque on single article pages
+	}
 	.entry-title {
 		padding: 0 0 .5rem;
 		border-bottom: 2px solid $c-primary;
@@ -470,16 +471,19 @@ $scanLineOpacity: 0.25;
 /* BEGIN LISTING PAGES */
 .listing {
 	.thumbnail-container {
-		min-height: 440px;
 		margin-bottom: 4 * $margin;	/* add buffer space before next post or footer */
+		border-top: 4px solid $c-nearblack;
 	}
 	.entry-container {
 		position: absolute;
 		top: 6rem;
 		left: 5%;
-		bottom: auto;
 		@media #{$not-sm} {
 			top: 12rem;
+		}
+		&.entry-container--placeholder {
+			visibility: hidden;
+			position: relative;
 		}
 	}
 }
@@ -579,12 +583,14 @@ $scanLineOpacity: 0.25;
 
 
 .single {
-	.entry-content,
 	.post-article-container {
 		padding: $margin;
 	} /* .entry-content */
 	.attachment-post-thumbnail {
 		margin: 1rem auto;
+	}
+	.post-thumbnail-img {
+		display: block;
 	}
 	.sharedaddy {
 		margin-top: 1.5rem;
