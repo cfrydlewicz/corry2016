@@ -4,8 +4,6 @@
 
 <article class="post post-<?php the_ID(); ?> u-clearfix thumbnail-container u-container wire-outline" id="anchor-single-article">
 
-	<img src="<?php get_post_thumbnail_url(); ?>" alt="Thumbnail Image for <?php the_title(); ?>" />
-
 	<div class="entry-container u-inner wire-outline">
 
 		<h1 class="entry-title wire-outline"><?php the_title(); ?></h1>
@@ -29,7 +27,15 @@
 			?></span>
 		</div>
 
-		<div class="u-clear"></div>
+	</div>
+
+	<div class="u-clear"></div>
+
+	<img class="post-thumbnail-img" src="<?php get_post_thumbnail_url(); ?>" alt="Thumbnail Image for <?php the_title(); ?>" />
+
+	<div class="u-clear"></div>
+
+	<div class="entry-container u-inner wire-outline">
 
 		<div class="copy-area entry-content wire-outline">
 			<?php the_content(); ?>
@@ -38,35 +44,41 @@
 		<section class="post-article-container wire-outline">
 
 			<div class="article-tags-container wire-outline">
-				<p><strong>Tags:</strong> <span class="tag-links"><?php the_tags( '', ', ', '' ); ?></span></p>
+				<p><strong>This article was tagged for:</strong> <span class="tag-links"><?php the_tags( '', ', ', '' ); ?></span></p>
 			</div>
 
 			<div class="discuss-container wire-outline">
 				<h3>Comments?</h3>
-				<p>Instead of using a standard comment thread, I've switched to discussion platforms you probably already use.</p>
-				<div class="discuss-button-container wire-outline">
-
-					<div class="discuss-button discuss--twitter wire-outline">
-						<a href="https://twitter.com/intent/tweet?text=re:%20http://corry.us/?p=<?php the_ID(); ?>&via=cfrydlewicz">Discuss on Twitter</a>
-					</div>
-
-					<div class="discuss-button discuss--facebook wire-outline">
-						<!-- use data-layout="button_count" for button w/ post count -->
-						<div class="fb-share-button" data-href="http://corry.us/?p=<?php the_ID(); ?>" data-layout="link"></div>
-					</div>
-
+				<p>Instead of a comment thread, I've switched to a discussion platform you probably already use:</p>
+				<div class="discuss-cta">
+					<a class="button-link discuss--twitter wire-outline" href="https://twitter.com/intent/tweet?text=http://corry.us/?p=<?php the_ID(); ?>&via=cfrydlewicz">Discuss on Twitter</a>
 				</div>
-				<p class="f-small"><strong>Note:</strong> Remember to tag me if you want a response.</p>
+				<p class="f-smallest"><strong>Note:</strong> Remember to tag me if you want a response.</p>
 			</div>
 
-			<div class="favorite-posts-container wire-outline">
-				<h3>Other Articles You May Enjoy</h3>
+			<?php $the_query = new WP_Query( array( 'tag' => 'favorite-post', 'posts_per_page' => 2 ) ); ?>
+			<div class="favorite-posts-container listing wire-outline">
+				<h3>Other Articles You May Like</h3>
 				<div class="favorite-posts">
-					<?php $the_query = new WP_Query( array( 'tag' => 'favorite-posts', 'numberposts' => 2 ) ); ?>
+
 					<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-						<div class="post wire-outline" style="background-image: url('<?php get_post_thumbnail_url(); ?>');">
-							<p class="f-larger"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></p>
+
+						<div class="favorite-post--individual">
+							<img src="<?php get_post_thumbnail_url(); ?>" alt="(Thumbnail Image for <?php the_title(); ?>)" />
+							<div class="entry-container wire-outline">
+								<div class="entry-title wire-outline"><?php the_title( '<a href="' . esc_url( get_permalink() ) . '">', '</a>' ); ?></div>
+								<div class="article-stats wire-outline">
+									<span class="article-wordcount u-nowrap"><?php echo word_count(); ?> words</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+									<span class="article-date u-nowrap"><?php the_date( 'Y.m.d', '', '' ); ?></span><!-- NOTE: Make sure dates are not links -->
+								</div>
+								<div class="u-clear"></div>
+								<div class="entry-summary copy-area wire-outline"><?php the_excerpt(); ?></div>
+								<div class="entry-cta">
+									<a href="<?php the_permalink(); ?>" rel="bookmark" class="button-link">Read the Article <span>&rang;</span></a>
+								</div>
+							</div><!-- /.entry-container -->
 						</div>
+
 					<?php endwhile;
 						wp_reset_postdata();
 					?>

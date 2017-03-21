@@ -226,13 +226,14 @@ $scanLineOpacity: 0.25;
 
 	.navigation-container {
 		box-sizing: border-box;
-		padding: 0 3%;	/* match .u-inner (visually) */
+//		padding: 0 3%;	/* match .u-inner (visually) */
 		width: 100%;
 		@media #{$not-sm} {
 			padding: 0 4%;	/* match .u-inner (visually) */
 		}
 		.nav-button {
 			border-bottom: 4px solid transparent;	/* set up spacing */
+			text-align: center;
 			&:hover {
 				border-bottom-color: $c-nearwhite;
 			}
@@ -270,8 +271,8 @@ $scanLineOpacity: 0.25;
 				}
 			}
 			@media #{$not-sm} {
+				text-align: left;
 				&.nav-button--expandable {
-					// extend .u-flex-parent
 					display: -webkit-box;
 					display: -moz-box;
 					display: -ms-flexbox;
@@ -283,7 +284,6 @@ $scanLineOpacity: 0.25;
 					}
 				}
 				.toplevel-link {
-					// extend .u-flex--grow1
 					-webkit-flex-grow: 1;
 					flex-grow: 1;
 				}
@@ -300,7 +300,7 @@ $scanLineOpacity: 0.25;
 				border-bottom-color: $c-accent;
 			}
 
-		}
+		} /* /.nav-button */
 		a,
 		.u-faketextlink {
 			display: block;
@@ -357,7 +357,7 @@ $scanLineOpacity: 0.25;
 			min-width: 320px;	/* fit longest subsection text on one line */
 			html.inlinesvg & svg,
 			html:not(.inlinesvg) & img {
-				height: 50px;
+				height: 30px;
 			}
 			.subsection-logo {
 				font-size: 1.5rem;
@@ -479,7 +479,7 @@ $scanLineOpacity: 0.25;
 		top: 6rem;
 		left: 5%;
 		@media #{$not-sm} {
-			top: 12rem;
+//		top: 12rem;
 		}
 		&.entry-container--placeholder {
 			visibility: hidden;
@@ -536,7 +536,7 @@ $scanLineOpacity: 0.25;
 		}
 		&.social-container {
 			li {
-				float: left;
+				display: inline-block;
 				margin-right: .5rem;
 				margin-bottom: .5rem;
 				a[class^=icon-] {
@@ -549,6 +549,9 @@ $scanLineOpacity: 0.25;
 		> .u-inner {
 			-webkit-flex-flow: row nowrap;
 			flex-flow: row nowrap;
+			&:after {
+				content: none;	// Fixes a flex box alignment issue from the clearfix
+			}
 			.footer-section-container {
 				max-width: 250px;
 				padding-left: .5rem;
@@ -557,14 +560,19 @@ $scanLineOpacity: 0.25;
 			.footer-section-container:first-child {
 				padding-left: 0;
 			}
+			.footer-section-container:nth-child(2) {
+				text-align: center;
+			}
 			.footer-section-container:last-child {
 				padding-right: 0;
+				text-align: right;
 			}
 		}
 	}
 }
 .copyright-footer {
 	color: mix(white, $c-basetext, 50%);
+	padding-bottom: .25rem;
 }
 /* END FOOTER REGION */
 
@@ -583,19 +591,34 @@ $scanLineOpacity: 0.25;
 
 
 .single {
-	.post-article-container {
-		padding: $margin;
-	} /* .entry-content */
+
 	.post-thumbnail-img {
 		display: block;
 		margin: 0 auto;
 	}
-	.sharedaddy {
-		margin-top: 1.5rem;
-		h3.sd-title::before {
-			display: none;	/* remove small line above share widget */
+
+	// Use hard selectors to override the plugin
+	div.sharedaddy {
+		margin-top: 4rem;
+		background-color: $c-primary;
+		box-sizing: border-box;
+		padding: 1rem .5rem .25rem;
+		text-align: center;
+		h3.sd-title {
+			@extend h3;
+			color: #fff;
+			margin-bottom: .5rem;
+			&:before {
+				display: none;	/* remove small line above share widget */
+			}
 		}
 	}
+
+	.post-article-container {
+		margin-top: 1rem;
+		padding-bottom: 2rem;
+	}
+
 	.article-tags-container {
 		margin-bottom: 2rem;
 		p {
@@ -603,13 +626,59 @@ $scanLineOpacity: 0.25;
 			line-height: 1.4;
 		}
 	}
-	.favorite-posts-container {
-		// TODO
-	}
+
 	.discuss-container {
-		margin-bottom: 1.5rem;
-		// TODO
+		padding: 1rem;
+		border: 1px solid $c-primary;
+		background-color: #fff;
+		margin-bottom: 3.5rem;
+		text-align: center;
+		.discuss-cta {
+			margin: 1rem;
+		}
 	}
+
+	.favorite-posts-container {
+		h3 {
+			@extend h2;
+			margin-bottom: 1rem;
+		}
+		.favorite-posts {
+			@extend .u-flex-parent;
+			@extend .u-flex-parent--space-between;
+			-webkit-flex-flow: column wrap;
+			flex-flow: column wrap;
+
+			.favorite-post--individual {
+				position: relative;
+			}
+
+			.sharedaddy {
+				display: none;
+			}
+
+			@media #{$not-sm} {
+				-webkit-flex-flow: row nowrap;
+				flex-flow: row nowrap;
+
+				.favorite-post--individual {
+					&:nth-child(odd) {
+						margin-right: 1rem;
+					}
+					.entry-container {
+						top: 10rem;
+						right: 5%;
+						.entry-summary p {
+							font-size: 1rem;
+						}
+					}
+				}
+
+			}
+
+		}
+	}
+
 } /* .single */
 
 .aligncenter,
