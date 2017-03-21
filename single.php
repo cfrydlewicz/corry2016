@@ -78,14 +78,6 @@
 								</div>
 							</div><!-- /.entry-container -->
 
-							<!-- This fake entry container element is to fix spacing issues - Only the title and excerpt are needed -->
-							<div class="entry-container entry-container--placeholder">
-								<div class="entry-title"><?php the_title( '<a href="#" rel="bookmark">', '</a>' ); ?></div>
-								<!--div class="article-stats"><span class="article-wordcount u-nowrap">12345 words</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="article-date u-nowrap">2000.01.01</span></div-->
-								<div class="u-clear"></div>
-								<div class="entry-summary copy-area wire-outline"><?php the_excerpt(); ?></div>
-							</div>
-
 						</div>
 
 					<?php endwhile;

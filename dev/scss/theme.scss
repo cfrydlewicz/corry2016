@@ -399,7 +399,6 @@ $scanLineOpacity: 0.25;
 
 /* HEADLINE FOR LISTINGS & CONTENT */
 .thumbnail-container {
-	position: relative;
 	box-sizing: border-box;
 	img:first-child {
 		display: block;
@@ -477,19 +476,14 @@ $scanLineOpacity: 0.25;
 /* BEGIN LISTING PAGES */
 .listing {
 	.thumbnail-container {
-		margin-bottom: 4 * $margin;	/* add buffer space before next post or footer */
+		margin-bottom: 3 * $margin;	/* add buffer space before next post or footer */
 		border-top: 4px solid $c-nearblack;
 	}
 	.entry-container {
-		position: absolute;
-		top: 6rem;
-		left: 5%;
+		position: relative;
+		top: -4rem;
 		@media #{$not-sm} {
-//		top: 12rem;
-		}
-		&.entry-container--placeholder {
-			visibility: hidden;
-			position: relative;
+			top: -8rem;
 		}
 	}
 }
@@ -657,14 +651,10 @@ $scanLineOpacity: 0.25;
 			flex-flow: column wrap;
 
 			.favorite-post--individual {
-				position: relative;
 				.entry-title {
 					font-size: 1rem;
 					line-height: 1.25;
 					padding-bottom: .25rem;
-				}
-				.entry-container {
-					right: 5%;
 				}
 			}
 

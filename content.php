@@ -36,16 +36,4 @@
 
 	</div><!-- /.entry-container -->
 
-	<!-- This fake entry container element is to fix spacing issues - Only the title and excerpt are needed -->
-	<div class="entry-container entry-container--placeholder u-inner">
-		<h2 class="entry-title wire-outline"><?php the_title( '<a href="#" rel="bookmark">', '</a>' ); ?></h2>
-		<div class="article-stats wire-outline"><span class="article-wordcount u-nowrap">12345 words</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="article-date u-nowrap">2000.01.01</span></div>
-		<div class="categories-container wire-outline">
-			<span class="u-visually-hidden">Categories:&nbsp;</span>
-			<span class="cat-items">CATEGORY, CATEGORY</span>
-		</div>
-		<div class="u-clear"></div>
-		<div class="entry-summary copy-area wire-outline"><?php the_excerpt(); ?></div>
-	</div>
-
 </article><!--.post-#-->
