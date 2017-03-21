@@ -53,7 +53,7 @@
 				<div class="discuss-cta">
 					<a class="button-link discuss--twitter wire-outline" href="https://twitter.com/intent/tweet?text=http://corry.us/?p=<?php the_ID(); ?>&via=cfrydlewicz">Discuss on Twitter</a>
 				</div>
-				<p class="f-smallest"><strong>Note:</strong> Remember to tag me if you want a response.</p>
+				<p class="f-smallest"><strong>Remember to tag me</strong> if you want a response.</p>
 			</div>
 
 			<?php $the_query = new WP_Query( array( 'tag' => 'favorite-post', 'posts_per_page' => 2 ) ); ?>
@@ -77,6 +77,15 @@
 									<a href="<?php the_permalink(); ?>" rel="bookmark" class="button-link">Read the Article <span>&rang;</span></a>
 								</div>
 							</div><!-- /.entry-container -->
+
+							<!-- This fake entry container element is to fix spacing issues - Only the title and excerpt are needed -->
+							<div class="entry-container entry-container--placeholder">
+								<div class="entry-title"><?php the_title( '<a href="#" rel="bookmark">', '</a>' ); ?></div>
+								<!--div class="article-stats"><span class="article-wordcount u-nowrap">12345 words</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="article-date u-nowrap">2000.01.01</span></div-->
+								<div class="u-clear"></div>
+								<div class="entry-summary copy-area wire-outline"><?php the_excerpt(); ?></div>
+							</div>
+
 						</div>
 
 					<?php endwhile;
