@@ -80,6 +80,7 @@ h1 {
 	line-height: 1;
 	font-weight: normal;
 	.copy-area & {
+		font-size: 2.1em;
 		margin-bottom: 1em;
 	}
 }
@@ -89,6 +90,7 @@ h2 {
   line-height: 1;
   font-weight: normal;
 	.copy-area & {
+	  font-size: 1.7em;
 		margin-top: 2em;
 		margin-bottom: .5em;
 	}
@@ -99,6 +101,7 @@ h3 {
 	line-height: 1.4;
 	font-weight: bold;
 	.copy-area & {
+		font-size: 1.1em;
 		margin-top: 1.5em;
 		margin-bottom: .5em;
 	}
@@ -110,12 +113,16 @@ h4 {
   font-weight: bold;
   text-transform: uppercase;
 	.copy-area & {
+	  font-size: 1em;
 		margin-bottom: .5em;
 	}
 }
 
 p, li {
   font-size: 1rem;
+	.copy-area & {
+	  font-size: 1em;
+	}
 }
 p {
   line-height: 1.8;
@@ -187,10 +194,10 @@ li {
 }
 
 .copy-area table {
-	font-size: .9rem;
-	line-height: 1.2rem;
+	font-size: .9em;
+	line-height: 1.2em;
 	p, li {
-		font-size: .9rem;
+		font-size: .9em;
 	}
 	th {
 	  font-weight: bold;
@@ -207,9 +214,9 @@ li {
 	&:before {
 		color: mix(white, $c-primary, 60%);
 		content: open-quote;
-		font-size: 5rem;
-		line-height: 0.1rem;
-		vertical-align: -3rem;
+		font-size: 5em;
+		line-height: 0.1em;
+		vertical-align: -3em;
 	}
 	&:after {
 		content: close-quote;
@@ -229,7 +236,7 @@ li {
 		}
 		&.cite,
 		del { /* fallback in case the replacement script doesn't fire */
-			font-size: .9rem;
+			font-size: .9em;
 			line-height: 1;
 			text-align: right;
 			margin-top: 0;
@@ -245,21 +252,39 @@ li {
 /* text modifiers */
 .f-small {
 	font-size: .9rem;
+	.copy-area & {
+	  font-size: .9em;
+	}
 }
 .f-smaller {
 	font-size: .75rem;
+	.copy-area & {
+	  font-size: .75em;
+	}
 }
 .f-smallest {
 	font-size: .625rem;
+	.copy-area & {
+	  font-size: .625em;
+	}
 }
 .f-large {
 	font-size: 1.1rem;
+	.copy-area & {
+	  font-size: .1.1em;
+	}
 }
 .f-larger {
 	font-size: 1.25rem;
+	.copy-area & {
+	  font-size: 1.25em;
+	}
 }
 .f-largest {
 	font-size: 1.4rem;
+	.copy-area & {
+	  font-size: 1.4em;
+	}
 }
 
 /* icomoon CSS */

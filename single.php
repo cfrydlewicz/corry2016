@@ -65,14 +65,14 @@
 
 						<div class="favorite-post--individual">
 							<img src="<?php get_post_thumbnail_url(); ?>" alt="(Thumbnail Image for <?php the_title(); ?>)" />
-							<div class="entry-container wire-outline">
+							<div class="entry-container copy-area wire-outline">
 								<div class="entry-title wire-outline"><?php the_title( '<a href="' . esc_url( get_permalink() ) . '">', '</a>' ); ?></div>
 								<div class="article-stats wire-outline">
 									<span class="article-wordcount u-nowrap"><?php echo word_count(); ?> words</span>&nbsp;&nbsp;|&nbsp;&nbsp;
 									<span class="article-date u-nowrap"><?php the_date( 'Y.m.d', '', '' ); ?></span><!-- NOTE: Make sure dates are not links -->
 								</div>
 								<div class="u-clear"></div>
-								<div class="entry-summary copy-area wire-outline"><?php the_excerpt(); ?></div>
+								<div class="entry-summary wire-outline"><?php the_excerpt(); ?></div>
 								<div class="entry-cta">
 									<a href="<?php the_permalink(); ?>" rel="bookmark" class="button-link">Read the Article <span>&rang;</span></a>
 								</div>

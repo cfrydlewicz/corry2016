@@ -678,9 +678,9 @@ $scanLineOpacity: 0.25;
 			.favorite-post--individual {
 				position: relative;
 				.entry-title {
-					font-size: 1rem;
+					font-size: 1em;
 					line-height: 1.25;
-					padding-bottom: .25rem;
+					padding-bottom: .25em;
 				}
 			}
 
@@ -703,11 +703,17 @@ $scanLineOpacity: 0.25;
 						left: 5%;
 						right: 5%;
 						.entry-summary p {
-							font-size: 1rem;
+							font-size: 1em;
 						}
 					}
 				}
 
+			}
+
+			@media #{$not-lg} {
+				.favorite-post--individual {
+					height: 560px;
+				}
 			}
 
 		}
