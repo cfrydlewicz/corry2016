@@ -247,7 +247,9 @@ $scanLineOpacity: 0.25;
 			.nav-button-expand-toggle {
 				display: none;
 				@extend .icon-plus;
-				&.expanded {
+			}
+			&.expanded {
+				.nav-button-expand-toggle {
 					@extend .icon-minus;
 				}
 			}
