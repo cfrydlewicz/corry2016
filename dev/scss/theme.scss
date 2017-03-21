@@ -258,15 +258,16 @@ $scanLineOpacity: 0.25;
 				top: 32px;	/* match height of .nav-button--expandable */
 				background-color: rgba(0,0,0,0.85);
 				box-sizing: border-box;
+				padding: .5rem 0;
 				border: 1px solid $c-lightest;
 				border-top-width: 4px;
-				padding: .5rem;
 				width: 100%;
 				z-index: 2;
 				ul.menu {
 					list-style: none;
 					a {
 						line-height: 2rem;
+						padding: 0 1rem;
 					}
 				}
 			}
