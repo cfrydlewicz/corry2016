@@ -1,6 +1,6 @@
 <article class="post post-<?php the_ID(); ?> u-clearfix thumbnail-container u-container">
 
-	<img src="<?php get_post_thumbnail_url(); ?>" alt="(Thumbnail Image)" />
+	<img src="<?php get_post_thumbnail_url(); ?>" alt="(Thumbnail Image for <?php the_title(); ?>)" />
 
 	<div class="entry-container u-inner wire-outline">
 
