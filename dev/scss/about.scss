@@ -1,12 +1,24 @@
 /* About Page */
 .page-id-640 {
-	p, li {
-		max-width: 600px;
-		&.copyright {max-width: none;}
+
+	.entry-content .alignright {
+		margin-left: 1em;
+		max-width: 40%;
 	}
+
+	// Columns
+	.third-col {
+		float: left;
+		width: 100%;
+		@media #{$not-sm} {
+			width: 33%;
+		}
+	}
+
 	#years {
 		margin: 0px;
 		padding-bottom: 0px;
+		a:hover {text-decoration: none;}
 		h4 {
 			margin: 2.5rem auto;
 			a {
@@ -32,6 +44,7 @@
 			}
 		}
 	}
+
 	.contact-me {
 		h1, h2, p {
 			text-align: center;
@@ -73,16 +86,16 @@
 	}
 }
 .meters-container {
-	margin-top: 3rem;
+
 	.meter {
 		box-sizing: border-box;
-		background-color: $c-grey;
-		height: 2rem;
+		background-color: $c-dark;
 		padding: .2rem .5rem;
 		h3 {
 			white-space: nowrap;
 			margin: 0px;
 		}
+		p {display:none;}	// WP randomly adds P tags in here for some reason >.<
 	}
 	.skill {
 		color: #fff;

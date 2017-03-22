@@ -212,20 +212,23 @@ li {
 	background-color: mix(white, $c-primary, 80%);
 	border-left: .5em solid mix(white, $c-primary, 60%);
 	&:before {
+		float: left;
 		color: mix(white, $c-primary, 60%);
 		content: open-quote;
 		font-size: 5em;
-		line-height: 0.1em;
-		vertical-align: -3em;
+		line-height: 0;
+		margin-top: .4em;
+		vertical-align: top;
 	}
 	&:after {
 		content: close-quote;
 		@extend .u-visually-hidden;
 	}
 	p {
-		display: block;
-		margin-top: ( $f-base-size * -1.5 );	/* align with large open quote */
-		margin-left: 2em;	/* Indent text */
+		display: inline-block;
+		max-width: 80%;
+		margin-top: .5em;	/* align with large open quote */
+		margin-left: 1em;	/* Indent text */
 		margin-bottom: 2.5em;	/* compensate an extra 1.5 for negative margin-top */
 		&:nth-last-child(2):after {
 			/* add close-quote after next-to-last p tag */
@@ -239,6 +242,7 @@ li {
 			font-size: .9em;
 			line-height: 1;
 			text-align: right;
+			width: 100%;
 			margin-top: 0;
 			margin-bottom: 0;
 		}
