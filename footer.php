@@ -31,11 +31,11 @@
 			</section>
 
 			<section class="contact-container footer-section-container u-flex--grow1 wire-outline" id="anchor-contact">
-				<?php if ( in_category('professional') ) : ?>
+				<?php if ( in_category('professional') || is_page() ) : ?>
 					<div class="contact-work">
 						<h3>About Corry</h3>
-						<p>I am currently <span class="availability availability--none c-grey">Unavailable</span> for full-time or freelance work.</p>
-						<p><a href="/about/">Read more about Corry</a></p>
+						<p>I am currently <span class="availability availability--none">Unavailable</span> for full-time or freelance work.</p>
+						<a class="button-link about-cta" href="/about/">Read more about Corry <span>⟩</span></a>
 					</div>
 				<?php else : ?>
 					<div class="contact-personal">

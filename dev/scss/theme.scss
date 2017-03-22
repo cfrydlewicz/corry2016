@@ -78,7 +78,7 @@ $scanLineOpacity: 0.25;
 .copyright-footer {
 	color: #fff;
 	background-color: rgba(0,0,0,0.7);
-	a,
+	a:not(.button-link),
 	.u-faketextlink {
 		color: $c-lightest;
 		&:hover {
@@ -569,6 +569,21 @@ $scanLineOpacity: 0.25;
 				}
 			}
 		}
+		.contact-work {
+			.availability {
+				font-weight: bold;
+				text-transform: uppercase;
+				&.availability--none {
+					color: $c-grey;
+				}
+				&.availability--noncontract {
+					color: $c-accent;
+				}
+			}
+			.about-cta {
+				margin-top: 1.5em;
+			}
+		}
 	}
 	@media #{$not-sm} {
 		> .u-inner {
@@ -626,7 +641,20 @@ $scanLineOpacity: 0.25;
 	// Use hard selectors to override the plugin
 	div.sharedaddy {
 		margin-top: 4rem;
-		background-color: $c-primary;
+
+		// Stylized Background
+		background-color: $c-darkest;
+
+		// Hexes - From http://lea.verou.me/css3patterns/
+		background:
+			radial-gradient(circle farthest-side at 0% 50%,$c-darkest 23.5%,rgba(240,166,17,0) 0)21px 30px,
+			radial-gradient(circle farthest-side at 0% 50%,$c-darker 24%,rgba(240,166,17,0) 0)19px 30px,
+			linear-gradient($c-darkest 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,$c-darkest 0)0 0,
+			linear-gradient(150deg,$c-darkest 24%,$c-darker 0,$c-darker 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,$c-darker 0,$c-darker 76%,$c-darkest 0)0 0,
+			linear-gradient(30deg,$c-darkest 24%,$c-darker 0,$c-darker 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,$c-darker 0,$c-darker 76%,$c-darkest 0)0 0,
+			linear-gradient(90deg,$c-darker 2%,$c-darkest 0,$c-darkest 98%,$c-darker 0%)0 0 $c-darkest;
+		background-size:40px 60px;
+
 		box-sizing: border-box;
 		padding: 1rem .5rem .25rem;
 		text-align: center;

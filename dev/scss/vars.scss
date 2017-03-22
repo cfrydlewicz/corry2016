@@ -26,6 +26,8 @@ $c-lightest:		mix(white, $c-primary, 60%);
 
 $c-nearblack:		mix(black, $c-primary, 80%);
 $c-darkest:			mix(black, $c-primary, 60%);
+$c-darker:			mix(black, $c-primary, 40%);
+$c-dark:				mix(black, $c-primary, 20%);
 
 $c-basetext:		#484e4e;
 $c-grey:				mix(white, $c-basetext, 50%);

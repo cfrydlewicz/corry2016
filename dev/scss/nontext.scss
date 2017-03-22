@@ -36,6 +36,30 @@ hr {
 	width: 60%;
 	border: none;
 	border-top: 1px solid $c-accent;
+
+	// Stylizing
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+		border-color: $c-primary;
+		border-width: 1px 0 0 0;
+	}
+	&:before {
+		border-style: dashed;
+		float: right;
+		margin-right: 1em;
+		width: 40%;
+		margin-top: -.5em;
+	}
+	&:after {
+		border-style: dotted;
+		text-align: left;
+		margin-left: 3em;
+		width: 30%;
+		margin-top: .25em;
+	}
+
 }
 
 table {
