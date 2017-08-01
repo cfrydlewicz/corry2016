@@ -134,6 +134,12 @@
 	-webkit-justify-content: center;
 	justify-content: center;
 }
+.u_flex-parent--vertcenter {
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	align-items: center;
+}
 
 /* Responsive Shortcut Classes */
 @media #{$only-sm} {
