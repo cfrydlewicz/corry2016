@@ -1,22 +1,22 @@
 /* UTILITY CLASSES */
 
 .u-container {
-  float: left;
-  clear: both;
-  width: 100%;
+	float: left;
+	clear: both;
+	width: 100%;
 }
 .u-inner {
 	box-sizing: border-box;
-  width: 90%;
-  max-width: 1000px;
-  margin: 0px auto;
-  &:after {
-    clear: both;
-    content: '';
-    visibility: hidden;
-    display: block;
-    height: 0px;
-  }
+	width: 90%;
+	max-width: 1000px;
+	margin: 0px auto;
+	&:after {
+		clear: both;
+		content: '';
+		visibility: hidden;
+		display: block;
+		height: 0px;
+	}
 	&.u-inner--padded {
 		padding-left: 1em;
 		padding-right: 1em;
@@ -25,8 +25,8 @@
 
 // Conditional inner elements by breakpoint
 @media #{only-sm} {
-  .u-inner.u-inner--not-sm {
-  	width: 100%;
+	.u-inner.u-inner--not-sm {
+		width: 100%;
 	}
 }
 
@@ -66,11 +66,11 @@
 .screen-reader-text	// legacy
 {
 	position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
 }
 
 /* Style for clickable non-<a> elements */
@@ -79,66 +79,113 @@
 }
 
 /* flex box utility classes */
-.u-flex-parent {
+.u_flex,
+.u-flex-parent /* LEGACY */ {
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
-	> .u-flex--grow1 {
+
+	/* flows */
+	&.u_flex--row-nowrap,
+	&.u-flex-parent--row-nowrap /* LEGACY */ {
+		/* default behavior */
+		-webkit-flex-flow: row nowrap;
+		flex-flow: row nowrap;
+	}
+	&.u_flex--row-wrap,
+	&.u-flex-parent--row-wrap /* LEGACY */ {
+		-webkit-flex-flow: row wrap;
+		flex-flow: row wrap;
+	}
+	&.u_flex--col,
+	&.u-flex-parent--col-wrap /* LEGACY */ {
+		-webkit-flex-flow: column wrap;
+		flex-flow: column wrap;
+	}
+
+	/* alignment & spacing */
+	&.u_flex--space-around,
+	&.u-flex-parent--space-around /* LEGACY */ {
+		-webkit-justify-content: space-around;
+		justify-content: space-around;
+	}
+	&.u_flex--space-between,
+	&.u-flex-parent--space-between /* LEGACY */ {
+		-webkit-justify-content: space-between;
+		justify-content: space-between;
+	}
+	&.u_flex--center,
+	&.u-flex-parent--center /* LEGACY */ {
+		-webkit-justify-content: center;
+		justify-content: center;
+	}
+	&.u_flex--vertcenter {
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		-webkit-box-align: center;
+		align-items: center;
+	}
+
+	/* Flexbox child elements */
+	> .u_flex--grow1,
+	> .u-flex--grow1 /* LEGACY */ {
 		-webkit-flex-grow: 1;
 		flex-grow: 1;
 	}
-	> .u-flex--grow2 {
-		-webkit-flex-grow: 2;
-		flex-grow: 2;
+
+}
+
+@media #{not-sm} {
+	.u_flex {
+		&.u_flex--row-nowrap--not-sm {
+			-webkit-flex-flow: row nowrap;
+			flex-flow: row nowrap;
+		}
+		&.u_flex--row-wrap--not-sm {
+			-webkit-flex-flow: row wrap;
+			flex-flow: row wrap;
+		}
+		&.u_flex--col--not-sm {
+			-webkit-flex-flow: column wrap;
+			flex-flow: column wrap;
+		}
 	}
-	> .u-flex--grow3 {
-		-webkit-flex-grow: 3;
-		flex-grow: 3;
+}
+
+@media #{not-md} {
+	.u_flex {
+		&.u_flex--row-nowrap--not-md {
+			-webkit-flex-flow: row nowrap;
+			flex-flow: row nowrap;
+		}
+		&.u_flex--row-wrap--not-md {
+			-webkit-flex-flow: row wrap;
+			flex-flow: row wrap;
+		}
+		&.u_flex--col--not-md {
+			-webkit-flex-flow: column wrap;
+			flex-flow: column wrap;
+		}
 	}
-	> .u-flex--grow4 {
-		-webkit-flex-grow: 4;
-		flex-grow: 4;
+}
+
+@media #{only-xl} {
+	.u_flex {
+		&.u_flex--row-nowrap--only-xl {
+			-webkit-flex-flow: row nowrap;
+			flex-flow: row nowrap;
+		}
+		&.u_flex--row-wrap--only-xl {
+			-webkit-flex-flow: row wrap;
+			flex-flow: row wrap;
+		}
+		&.u_flex--col--only-xl {
+			-webkit-flex-flow: column wrap;
+			flex-flow: column wrap;
+		}
 	}
-	> .u-flex--grow5 {
-		-webkit-flex-grow: 5;
-		flex-grow: 5;
-	}
-}
-.u-flex-parent--row-nowrap {
-	-webkit-flex-flow: row nowrap;
-	flex-flow: row nowrap;
-}
-.u-flex-parent--col-nowrap {
-	-webkit-flex-flow: column nowrap;
-	flex-flow: column nowrap;
-}
-.u-flex-parent--row-wrap {
-	-webkit-flex-flow: row wrap;
-	flex-flow: row wrap;
-}
-.u-flex-parent--col-wrap {
-	-webkit-flex-flow: column wrap;
-	flex-flow: column wrap;
-}
-.u-flex-parent--space-around {
-	-webkit-justify-content: space-around;
-	justify-content: space-around;
-}
-.u-flex-parent--space-between {
-	-webkit-justify-content: space-between;
-	justify-content: space-between;
-}
-.u-flex-parent--center {
-	-webkit-justify-content: center;
-	justify-content: center;
-}
-.u_flex-parent--vertcenter {
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	-webkit-box-align: center;
-	align-items: center;
 }
 
 /* Responsive Shortcut Classes */
